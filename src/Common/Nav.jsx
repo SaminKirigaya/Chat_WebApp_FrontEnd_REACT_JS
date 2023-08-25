@@ -30,6 +30,10 @@ import axios from 'axios';
   const EditProfile = React.lazy(()=>import('../Component/EditProfile'));
   const Logout = React.lazy(()=>import('../Component/Logout'));
   const DeleteId = React.lazy(()=>import('../Component/DeleteId'));
+  const ChangeEmote = React.lazy(()=>import('../Component/ChangeEmote'));
+  const FriendList = React.lazy(()=>import('../Component/FriendList'));
+  const SearchResult = React.lazy(()=>import('../Component/SearchResult'));
+
 
 
 export class Nav extends Component {
@@ -108,34 +112,46 @@ export class Nav extends Component {
                   </Stack>}
                 </div>
                 
-                <div className='mb-2 anim'>
-                    <AccountCircleIcon fontSize='large'/>
-                </div>
 
-                <div className='mb-2 anim'>
-                    <AccountCircleIcon fontSize='large'/>
-                </div>
+                {this.state.token != '' ? <div className='mb-2 anim'>
+                <AccountCircleIcon fontSize='large'/>
+                </div> : null }
+                
 
-                <div className='mb-3 anim'>
-                    <AccountCircleIcon fontSize='large'/>
-                </div>
+                {this.state.token !='' ? <div className='mb-2 anim'>
+                <AccountCircleIcon fontSize='large'/>
+                </div>:null}
+                
+
+
+                {this.state.token !='' ? <div className='mb-3 anim'>
+                <AccountCircleIcon fontSize='large'/>
+                </div>:null}
+                
 
                 <MoreVertIcon />
                 <MoreVertIcon />
 
+                {this.state.token == '' ? 
                 <div className='mt-2 mb-1 anim'>
-                    {this.state.token == '' ? <Link className='verifyme' to='/verifyMe'><CheckCircleOutlineIcon fontSize='large'/></Link> : null}
+                    <Link className='verifyme' to='/verifyMe'><CheckCircleOutlineIcon fontSize='large'/></Link>
                     
-                </div>
+                </div>: null}
 
+                {this.state.token != '' ? 
                 <div className='mt-2 mb-1 anim'>
                     <MarkEmailUnreadIcon fontSize='large'/>
                 </div>
+                : null}
 
 
+                {
+                    this.state.token != '' ? 
                 <div className='mb-2 mt-1 anim'>
-                    <Diversity1Icon fontSize='large'/>
+                    <Link className='verifyme' to='/friendList'><Diversity1Icon fontSize='large'/></Link>
                 </div>
+                : null
+                }
                 
                 {this.state.token != '' ?  <div className='mb-2 mt-1 anim'>
                 <Link className='verifyme' to='/logout'><LogoutIcon fontSize='large' /></Link>
@@ -159,6 +175,9 @@ export class Nav extends Component {
                     <Route exact path='/editProfile/:userslno' component={(props)=>(<EditProfile image={this.state.image} slno={this.state.slno} {...props}/>)} />
                     <Route exact path='/logout' component={(props)=>(<Logout userslno={this.state.slno} image={this.state.image} {...props}/>)} />
                     <Route exact path='/deleteID/:slno' component={(props)=>(<DeleteId image={this.state.image} {...props}/>)} /> 
+                    <Route exact path='/changeEmote/:slno' component={(props)=>(<ChangeEmote {...props}/>)} />
+                    <Route exact path='/friendList' component={()=>(<FriendList slno={this.state.slno}/>)} />
+                    <Route exact path='/searchresult/:searchData' component={(props)=>(<SearchResult slno={this.state.slno} {...props}/>)} />
 
                     </Switch>
             </Suspense>

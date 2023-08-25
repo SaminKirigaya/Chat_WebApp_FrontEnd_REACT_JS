@@ -1,4 +1,31 @@
 @media (min-width:350px) and (max-width:374px){
+    
+    .friendbox{
+        position: absolute;
+        top: 21%;
+        min-height: 73vh;
+        max-height: 68vh;
+        min-width: 69vw;
+        max-width: 69vw;
+        
+    }
+
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:14%;
+    }
+    .searchmain{
+        display: flex;
+      
+        margin-top: 2rem !important;
+        min-width: 89% !important;
+        max-width: 60% !important;
+        min-height: 8vw !important;
+        max-height: 8vw !important;  
+    }
+
+
     .cardwidth{
         min-width: 68vw;
         max-width: 68vw;
@@ -113,6 +140,31 @@
 }
 
 @media (min-width:375px) and (max-width:389px){
+    
+.friendbox{
+    position: absolute;
+    top: 21%;
+    min-height: 73vh;
+    max-height: 68vh;
+    min-width: 69vw;
+    max-width: 69vw;
+ 
+}
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:15%;
+    }
+    .searchmain{
+        display: flex;
+       
+        margin-top: 2rem !important;
+        min-width: 89% !important;
+        max-width: 60% !important;
+        min-height: 8vw !important;
+        max-height: 8vw !important;  
+    }
+
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -219,6 +271,32 @@
 
 
 @media (min-width:390px) and (max-width:411px){
+    
+.friendbox{
+    position: absolute;
+    top: 19%;
+    min-height: 73vh;
+    max-height: 68vh;
+    min-width: 69vw;
+    max-width: 69vw;
+
+}
+
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:11%;
+    }
+    .searchmain{
+        display: flex;
+       
+        margin-top: 2rem !important;
+        min-width: 89% !important;
+        max-width: 60% !important;
+        min-height: 8vw !important;
+        max-height: 8vw !important;  
+    }
+
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -325,6 +403,32 @@
 
 
 @media (min-width:412px) and (max-width:539px){
+    
+.friendbox{
+    position: absolute;
+    top: 19%;
+    min-height: 73vh;
+    max-height: 68vh;
+    min-width: 69vw;
+    max-width: 69vw;
+   
+}
+
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:12%;
+    }
+    .searchmain{
+        display: flex;
+       
+        margin-top: 2rem !important;
+        min-width: 89% !important;
+        max-width: 60% !important;
+        min-height: 8vw !important;
+        max-height: 8vw !important;  
+    }
+
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -428,6 +532,31 @@
 }
 
 @media (min-width:540px) and (max-width:767px){
+    
+.friendbox{
+    position: absolute;
+    top: 21%;
+    min-height: 73vh;
+    max-height: 68vh;
+    min-width: 61vw;
+    max-width: 61vw;
+ 
+}
+
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:14%;
+    }
+    .searchmain{
+        display: flex;
+       
+        margin-top: 2rem !important;
+        min-width: 89% !important;
+        max-width: 60% !important;
+        min-height: 8vw !important;
+        max-height: 8vw !important;  
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -441,6 +570,12 @@
         min-width: 48vw;
         max-width: 48vw;
     }
+
+    .cardwidth2{
+        min-width: 59vw;
+        max-width: 59vw;
+    }
+    
     .loginstyleforg{
         color: #e80070;
         font-size: 2.2rem;
@@ -533,6 +668,30 @@
 
 
 @media (min-width:768px) and (max-width:819px){
+
+    .friendbox{
+        position: absolute;
+        top: 19%;
+        min-height: 73vh;
+        max-height: 68vh;
+        min-width: 82vw;
+        max-width: 82vw;
+    
+    }
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:11%;
+    }
+    .searchmain{
+        display: flex;
+       
+        margin-top: 3rem !important;
+        min-width: 89% !important;
+        max-width: 60% !important;
+        min-height: 8vw !important;
+        max-height: 8vw !important;  
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -545,6 +704,11 @@
     .cardwidth{
         min-width: 38vw;
         max-width: 38vw;
+    }
+
+    .cardwidth2{
+        min-width: 27vw;
+        max-width: 27vw;
     }
     .loginstyleforg{
         color: #e80070;
@@ -636,6 +800,30 @@
 }
 
 @media (min-width:820px) and (max-width:911px){
+    .friendbox{
+        position: absolute;
+        top: 16%;
+        min-height: 76vh;
+        max-height: 68vh;
+        min-width: 82vw;
+        max-width: 82vw;
+        
+    }
+
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:11%;
+    }
+    .searchmain{
+        display: flex;
+       
+        margin-top: 3rem !important;
+        min-width: 89% !important;
+        max-width: 89% !important;
+        min-height: 8vw !important;
+        max-height: 8vw !important;  
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -648,6 +836,11 @@
     .cardwidth{
         min-width: 50vw;
         max-width: 50vw;
+    }
+
+    .cardwidth2{
+        min-width: 27vw;
+        max-width: 27vw;
     }
     .loginstyleforg{
         color: #e80070;
@@ -742,6 +935,30 @@
 
 
 @media (min-width:912px) and (max-width:1023px){
+    .friendbox{
+        position: absolute;
+        top: 18%;
+        min-height: 76vh;
+        max-height: 68vh;
+        min-width: 82vw;
+        max-width: 82vw;
+       
+    }
+
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:13%;
+    }
+    .searchmain{
+        display: flex;
+       
+        margin-top: 5rem !important;
+        min-width: 70% !important;
+        max-width: 70% !important;
+        min-height: 8vw !important;
+        max-height: 8vw !important;  
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -754,6 +971,11 @@
     .cardwidth{
         min-width: 50vw;
         max-width: 50vw;
+    }
+
+    .cardwidth2{
+        min-width: 27vw;
+        max-width: 27vw;
     }
 
     .loginstyleforg{
@@ -846,6 +1068,29 @@
 
 
 @media (min-width:1024px) and (max-width:1279px){
+    .friendbox{
+        position: absolute;
+        top: 25%;
+        min-height: 68vh;
+        max-height: 68vh;
+        min-width: 76vw;
+        max-width: 76vw;
+        
+    }
+
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:17%;
+    }
+    .searchmain{
+        display: flex;
+        margin-top: 2rem !important;
+        min-width: 65% !important;
+        max-width: 65% !important;
+        min-height: 2vw !important;
+        max-height: 5vw !important;
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -858,6 +1103,11 @@
     .cardwidth{
         min-width: 30vw;
         max-width: 30vw;
+    }
+
+    .cardwidth2{
+        min-width: 25vw;
+        max-width: 25vw;
     }
 
     .loginstyleforg{
@@ -944,6 +1194,28 @@
 
 
 @media (min-width:1280px) and (max-width:1365px){
+    .friendbox{
+        position: absolute;
+        top: 25%;
+        min-height: 68vh;
+        max-height: 68vh;
+        min-width: 76vw;
+        max-width: 76vw;
+        
+    }
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:18%;
+    }
+    .searchmain{
+        display: flex;
+        margin-top: 3rem !important;
+        min-width: 60% !important;
+        max-width: 60% !important;
+        min-height: 2vw !important;
+        max-height: 5vw !important;
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -1049,6 +1321,29 @@
 
 
 @media (min-width:1366px) and (max-width:1919px){
+    .friendbox{
+        position: absolute;
+        top: 25%;
+        min-height: 70vh;
+        max-height: 70vh;
+        min-width: 76vw;
+        max-width: 76vw;
+       
+        overflow-y: auto;
+    }
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:19%;
+    }
+    .searchmain{
+        display: flex;
+        margin-top: 3rem !important;
+        min-width: 60% !important;
+        max-width: 60% !important;
+        min-height: 2vw !important;
+        max-height: 2vw !important;
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 2.2rem;
@@ -1137,6 +1432,28 @@
 
 
 @media (min-width:1920px) and (max-width:3839px){
+    .friendbox{
+        position: absolute;
+        top: 25%;
+        min-height: 68vh;
+        max-height: 68vh;
+        min-width: 76vw;
+        max-width: 76vw;
+    
+    }
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:15%;
+    }
+    .searchmain{
+        display: flex;
+        margin-top: 3rem !important;
+        min-width: 60% !important;
+        max-width: 60% !important;
+        min-height: 4vw !important;
+        max-height: 4vw !important;
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 3rem;
@@ -1286,6 +1603,28 @@
 
 
 @media (min-width:3840px) and (max-width:7999px){
+    .friendbox{
+        position: absolute;
+        top: 23%;
+        min-height: 68vh;
+        max-height: 68vh;
+        min-width: 76vw;
+        max-width: 76vw;
+      
+    }
+    .tagsearch{
+        color: #dd3d8a;
+        position: absolute;
+        top:15%;
+    }
+    .searchmain{
+        display: flex;
+        margin-top: 9rem !important;
+        min-width: 60% !important;
+        max-width: 60% !important;
+        min-height: 2vw !important;
+        max-height: 2vw !important;
+    }
     .loginstylelout{
         color: #e80070;
         font-size: 3.2rem;
@@ -1541,4 +1880,34 @@ body::-webkit-scrollbar {
 
 .zind{
     z-index: 200;
+}
+
+.cardb{
+    border: none;
+}
+
+.avat{
+    color: #dd3d8a;
+}
+
+.desbtnsearch{
+   
+    color: #dd3d8a;
+    border-color: #dd3d8a;
+    
+}
+
+.desbtnsearch:hover {
+    color: #fff;
+    background-color: #dd3d8a;
+    border-color: #dd3d8a ;
+}
+
+
+.brdred{
+    border-radius: 2rem !important;
+}
+
+.nofriend{
+    color: #dd3d8a;
 }

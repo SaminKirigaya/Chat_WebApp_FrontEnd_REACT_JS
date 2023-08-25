@@ -85,7 +85,7 @@ export class DeleteId extends Component {
                 <Avatar
                   alt="Remy Sharp"
                   src={this.props.image}
-                  sx={{ width: 56, height: 56 }}
+                  sx={{ width: 56, height: 56, border: '0.13rem solid #dd3d8a' }}
                 />
               </Stack>
 

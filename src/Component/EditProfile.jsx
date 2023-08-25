@@ -214,7 +214,7 @@ export class EditProfile extends Component {
         <div className="card cardwidth profilecardbg">
         <div className='mx-auto mt-4 anim'>
         <Stack direction="row" spacing={2}>
-        <Avatar alt="Remy Sharp" src={this.props.image} sx={{ width: 56, height: 56 }}
+        <Avatar alt="Remy Sharp" src={this.props.image} sx={{ width: 56, height: 56, border: '0.13rem solid #dd3d8a' }}
         />
     
         </Stack>
