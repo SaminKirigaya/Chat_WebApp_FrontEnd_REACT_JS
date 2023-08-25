@@ -6,6 +6,8 @@ import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 import {
     BrowserRouter as Router,
@@ -21,7 +23,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 
-export class Logout extends Component {
+export class DeleteId extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,15 +45,15 @@ export class Logout extends Component {
   };
 
 
-  logMeOut=async (e)=>{
-    
+  DeleteMe=async (e)=>{
+    const {slno} = this.props.match.params;
     try{
-      const response = await axios.get(`/logout/${this.props.userslno}`,{
+      const response = await axios.get(`/deleteId/${slno}`,{
         headers : {
           'Content-Type' : 'application/json'
         }
       })
-      if(response.data.message == 'Successfully Logged Out ...'){
+      if(response.data.message == 'Successfully Deleted Account ... Thanks For Staying With Us All This Time.'){
         localStorage.clear();
 
         setTimeout(()=>{window.location.href = '/login'},2500);
@@ -72,7 +74,7 @@ export class Logout extends Component {
     return (
         <Fragment>
             <div className='container-fluid login d-flex flex-column justify-content-center align-items-center'>
-              <h3 className='loginstylelout loganimtxt zind'>LOGOUT !!!</h3>
+              <h3 className='loginstylelout loganimtxt zind'>Delete !!!</h3>
               <div className="card mb-3 profilecardbg">
               <div className="row g-0">
                 <div className="col-md-4 d-flex justify-content-center align-items-center mt-5 mt-md-0">
@@ -93,8 +95,8 @@ export class Logout extends Component {
                 <div className="col-md-8">
                   <div className="card-body">
                     
-                    <p className="card-text">You sure you want to logout ??? Once logout all unsaved data will be lost !!!</p>
-                    <Link to='#' onClick={(e)=>{this.logMeOut(e)}} className="btn btn-sm btn-primary btndescardprofile mt-1"><LogoutIcon />Logout !</Link>
+                    <p className="card-text">You sure you want to Delete Account ??? Once Deleted no turning back !!!</p>
+                    <Link to='#' onClick={(e)=>{this.DeleteMe(e)}} className="btn btn-sm btn-primary btndescardprofile mt-1"><DeleteIcon />Delete !</Link>
                   </div>
                 </div>
                 </div>
@@ -119,4 +121,4 @@ export class Logout extends Component {
   }
 }
 
-export default Logout
+export default DeleteId

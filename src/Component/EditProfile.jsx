@@ -105,7 +105,7 @@ export class EditProfile extends Component {
                 })
             }
 
-            console.log(this.state.userData)
+            
 
         }catch(err){
             console.log(err)

@@ -32,6 +32,16 @@
         right: 12%;
     }
 
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 6%;
+        right: 22%;
+    
+    }
+
     .loginstyleforg{
         color: #e80070;
         font-size: 2.2rem;
@@ -103,6 +113,15 @@
 }
 
 @media (min-width:375px) and (max-width:389px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 6%;
+        right: 22%;
+    
+    }
     .cardwidth{
         min-width: 68vw;
         max-width: 68vw;
@@ -200,6 +219,15 @@
 
 
 @media (min-width:390px) and (max-width:411px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 6%;
+        right: 22%;
+    
+    }
     .cardwidth{
         min-width: 68vw;
         max-width: 68vw;
@@ -297,6 +325,15 @@
 
 
 @media (min-width:412px) and (max-width:539px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 6%;
+        right: 22%;
+    
+    }
     .cardwidth{
         min-width: 68vw;
         max-width: 68vw;
@@ -391,6 +428,15 @@
 }
 
 @media (min-width:540px) and (max-width:767px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 8%;
+        right: 32%;
+    
+    }
     .cardwidth{
         min-width: 48vw;
         max-width: 48vw;
@@ -487,6 +533,15 @@
 
 
 @media (min-width:768px) and (max-width:819px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 4%;
+        right: 38%;
+    
+    }
     .cardwidth{
         min-width: 38vw;
         max-width: 38vw;
@@ -581,6 +636,15 @@
 }
 
 @media (min-width:820px) and (max-width:911px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 4%;
+        right: 37%;
+    
+    }
     .cardwidth{
         min-width: 50vw;
         max-width: 50vw;
@@ -678,6 +742,15 @@
 
 
 @media (min-width:912px) and (max-width:1023px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 4%;
+        right: 34%;
+    
+    }
     .cardwidth{
         min-width: 50vw;
         max-width: 50vw;
@@ -773,6 +846,15 @@
 
 
 @media (min-width:1024px) and (max-width:1279px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 8%;
+        right: 28%;
+    
+    }
     .cardwidth{
         min-width: 30vw;
         max-width: 30vw;
@@ -862,6 +944,15 @@
 
 
 @media (min-width:1280px) and (max-width:1365px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 8%;
+        right: 22%;
+    
+    }
     .cardwidth{
         min-width: 25vw;
         max-width: 25vw;
@@ -958,6 +1049,15 @@
 
 
 @media (min-width:1366px) and (max-width:1919px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 2.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 9%;
+        right: 20%;
+    
+    }
     .cardwidth{
         min-width: 20vw;
         max-width: 20vw;
@@ -1037,6 +1137,15 @@
 
 
 @media (min-width:1920px) and (max-width:3839px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 3rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 6%;
+        right: 15%;
+    
+    }
     .cardwidth{
         min-width: 25vw;
         max-width: 25vw;
@@ -1177,6 +1286,15 @@
 
 
 @media (min-width:3840px) and (max-width:7999px){
+    .loginstylelout{
+        color: #e80070;
+        font-size: 3.2rem;
+        transform: rotate(-30deg);
+        position: relative;
+        top: 3%;
+        right: 8%;
+    
+    }
     .cardwidth{
         min-width: 30vw;
         max-width: 30vw;

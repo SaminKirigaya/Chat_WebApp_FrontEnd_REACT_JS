@@ -29,6 +29,7 @@ import axios from 'axios';
   const UserProfile = React.lazy(()=>import('../Component/UserProfile'));
   const EditProfile = React.lazy(()=>import('../Component/EditProfile'));
   const Logout = React.lazy(()=>import('../Component/Logout'));
+  const DeleteId = React.lazy(()=>import('../Component/DeleteId'));
 
 
 export class Nav extends Component {
@@ -52,7 +53,7 @@ export class Nav extends Component {
 
                 if(response.status == 200){
                     if(response.data.message == 'You are logged in.'){
-                        this.setState({
+                        await this.setState({
                             token : localStorage.getItem('token'),
                             image : localStorage.getItem('image'),
                             slno : localStorage.getItem('slno')
@@ -61,7 +62,10 @@ export class Nav extends Component {
                     }else if(response.data.message == 'You are not logged in.'){
                         localStorage.clear();
                     }
+                    console.log(this.state)
                 }
+
+                console.log(this.state)
             }catch(err){
                 console.log(err)
             }
@@ -153,7 +157,8 @@ export class Nav extends Component {
                     <Route exact path='/verifyMe' component={()=>(<VerifyMe />)} />
                     <Route exact path='/userProfile' component={()=>(<UserProfile image={this.state.image} slno={this.state.slno}/>)} />
                     <Route exact path='/editProfile/:userslno' component={(props)=>(<EditProfile image={this.state.image} slno={this.state.slno} {...props}/>)} />
-                    <Route exact path='/logout' component={()=>(<Logout />)} />
+                    <Route exact path='/logout' component={(props)=>(<Logout userslno={this.state.slno} image={this.state.image} {...props}/>)} />
+                    <Route exact path='/deleteID/:slno' component={(props)=>(<DeleteId image={this.state.image} {...props}/>)} /> 
 
                     </Switch>
             </Suspense>
