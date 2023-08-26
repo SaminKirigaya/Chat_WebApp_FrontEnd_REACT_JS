@@ -81,7 +81,7 @@ export class FriendReqAll extends Component {
             if(this.state.requestData.length>0){
                 return this.state.requestData.map((each)=>{
                     return <div className='col'>
-                    <div className="card cardwidth cardwidth2 brdred profilecardbg mb-4">
+                    <div className="card cardwidth cardwidth2 brdred profilecardbg mb-4 cardanim">
                     <div className='mx-auto mt-4 anim'>
                     <Stack direction="row" spacing={2}>
                     <Avatar alt="Remy Sharp" src={each.image} sx={{ width: 56, height: 56, border: '0.13rem solid #dd3d8a' }}

@@ -1,4 +1,31 @@
 @media (min-width:350px) and (max-width:374px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 22%;
+        width: 80%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 80%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+        
+        position: fixed;
+        top: 91%;
+    }
     
     .friendbox{
         position: absolute;
@@ -140,6 +167,33 @@
 }
 
 @media (min-width:375px) and (max-width:389px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 25%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+       
+        position: fixed;
+        top: 91%;
+    }
     
 .friendbox{
     position: absolute;
@@ -271,6 +325,33 @@
 
 
 @media (min-width:390px) and (max-width:411px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 25%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+   
+        position: fixed;
+        top: 91%;
+    }
     
 .friendbox{
     position: absolute;
@@ -403,6 +484,33 @@
 
 
 @media (min-width:412px) and (max-width:539px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 25%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+ 
+        position: fixed;
+        top: 90%;
+    }
     
 .friendbox{
     position: absolute;
@@ -532,6 +640,36 @@
 }
 
 @media (min-width:540px) and (max-width:767px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+
+
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+       
+        position: fixed;
+        top: 90%;
+    }
+
     
 .friendbox{
     position: absolute;
@@ -668,6 +806,33 @@
 
 
 @media (min-width:768px) and (max-width:819px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+       
+        position: fixed;
+        top: 90%;
+    }
 
     .friendbox{
         position: absolute;
@@ -800,6 +965,33 @@
 }
 
 @media (min-width:820px) and (max-width:911px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+     
+        position: fixed;
+        top: 90%;
+    }
     .friendbox{
         position: absolute;
         top: 16%;
@@ -935,6 +1127,33 @@
 
 
 @media (min-width:912px) and (max-width:1023px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+  
+        position: fixed;
+        top: 90%;
+    }
     .friendbox{
         position: absolute;
         top: 18%;
@@ -1068,6 +1287,33 @@
 
 
 @media (min-width:1024px) and (max-width:1279px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+       
+        position: fixed;
+        top: 88%;
+    }
     .friendbox{
         position: absolute;
         top: 25%;
@@ -1194,6 +1440,33 @@
 
 
 @media (min-width:1280px) and (max-width:1365px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+  
+        position: fixed;
+        top: 88%;
+    }
     .friendbox{
         position: absolute;
         top: 25%;
@@ -1321,6 +1594,33 @@
 
 
 @media (min-width:1366px) and (max-width:1919px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+    
+        position: fixed;
+        top: 87%;
+    }
     .friendbox{
         position: absolute;
         top: 25%;
@@ -1432,6 +1732,33 @@
 
 
 @media (min-width:1920px) and (max-width:3839px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+        
+        position: fixed;
+        top: 89%;
+    }
     .friendbox{
         position: absolute;
         top: 25%;
@@ -1603,6 +1930,33 @@
 
 
 @media (min-width:3840px) and (max-width:7999px){
+    .mymsg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white
+     }
+    
+     .sendermsg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff
+     }
+    .sendingbox{
+        display: flex;
+        width: 78vw;
+        height: 6vh;
+
+        position: fixed;
+        top: 89%;
+    }
     .friendbox{
         position: absolute;
         top: 23%;
@@ -1921,4 +2275,55 @@ body::-webkit-scrollbar {
 }
 .form-select{
     border: 0.1rem solid #dd3d8a;
+}
+
+
+.cardanim{
+    transform: scale(1);
+    transition: all 1s;
+}
+
+.cardanim:hover{
+    transform: scale(1.1);
+    z-index: 200;
+}
+
+.btn{
+    padding: .075rem .5rem;
+    font-size: .76rem;
+    border-radius: .2rem;
+}
+
+#fileinp{
+    display:none;
+    visibility: none;
+}
+
+.imgcol{
+    color: #dd3d8a;
+}
+
+.card-container {
+    display: block;
+    position: absolute;
+    top: 5%;
+    min-width: 70vw;
+    max-width: 70vw;
+    min-height: 80vh;
+    max-height: 80vh; /* Set your desired max height */
+    overflow-y: scroll;
+    border: 1px solid #ff5757;
+    padding: 1rem;
+     -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+}
+
+.card-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .styles_scrollable-div__prSCv {
+    
+    height: 78vh !important;
+    overflow-y: auto;
 }

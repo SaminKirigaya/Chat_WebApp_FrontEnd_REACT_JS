@@ -80,7 +80,7 @@ export class FriendList extends Component {
             if(this.state.friendData.length>0){
                 return this.state.friendData.map((each)=>{
                     return <div className='col'>
-                    <div className="card cardwidth cardwidth2 brdred profilecardbg mb-4">
+                    <div className="card cardwidth cardwidth2 brdred profilecardbg mb-4 cardanim">
                     <div className='mx-auto mt-4 anim'>
                     <Stack direction="row" spacing={2}>
                     <Avatar alt="Remy Sharp" src={each.image} sx={{ width: 56, height: 56, border: '0.13rem solid #dd3d8a' }}
@@ -92,8 +92,8 @@ export class FriendList extends Component {
                     
                     <div className="card-body d-flex flex-column align-items-center">
                       <h5 className="card-title"><PersonIcon fontSize='large'/>@_{each.username}</h5>
-                      <p clasName="card-text"><BadgeIcon/> <span>Full Name : </span>{each.fullname}<br></br><PublicIcon /> <span>Country : </span>{each.country}<br></br><AccessibilityNewIcon /> <span>Age : </span>{each.age}<br></br><WcIcon /> <span>Gender : </span>{each.gender}</p>
-                      <Link className="btn btn-sm btn-danger btndescardprofile text-center"><TelegramIcon /> Message</Link>
+                      <p className="card-text"><BadgeIcon/> <span>Full Name : </span>{each.fullname}<br></br><PublicIcon /> <span>Country : </span>{each.country}<br></br><AccessibilityNewIcon /> <span>Age : </span>{each.age}<br></br><WcIcon /> <span>Gender : </span>{each.gender}</p>
+                      <Link to={'/message/'+each._id} className="btn btn-sm btn-danger btndescardprofile text-center"><TelegramIcon /> Message</Link>
                       <Link to='#' onClick={(e)=>{this.unfriend(e,each._id)}} className="btn btn-sm btn-danger btndescardprofile text-center mt-1"><PersonRemoveIcon /> Unfriend !</Link>
                     </div>
                     </div>

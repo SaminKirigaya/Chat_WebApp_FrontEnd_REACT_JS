@@ -20,7 +20,7 @@ import PublicIcon from '@mui/icons-material/Public';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import WcIcon from '@mui/icons-material/Wc';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
-
+import SendIcon from '@mui/icons-material/Send';
 
 import {
     BrowserRouter as Router,
@@ -92,7 +92,7 @@ export class SearchResult extends Component {
             if(this.state.personData.length>0){
                 return this.state.personData.map((each)=>{
                     return <div className='col'>
-                    <div className="card cardwidth cardwidth2 brdred profilecardbg mb-4">
+                    <div className="card cardwidth cardwidth2 brdred profilecardbg mb-4 cardanim">
                     <div className='mx-auto mt-4 anim'>
                     <Stack direction="row" spacing={2}>
                     <Avatar alt="Remy Sharp" src={each.image} sx={{ width: 56, height: 56, border: '0.13rem solid #dd3d8a' }}
