@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
-
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
@@ -30,67 +29,57 @@ import {
   } from "react-router-dom";
 import axios from 'axios';
 
+
+
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
   
-export class SearchResult extends Component {
+
+export class FriendReqAll extends Component {
     constructor(props) {
         super(props);
         this.state = {
             searchname : '',
-            personData : [],
+            requestData : [],
             open: false,
             returnMessage : ''
         }
     }
 
-
-    async componentDidMount(){
-        
-        const {searchData} = this.props.match.params;
+    acceptFriend = async(e, idno)=>{
+        e.preventDefault()
         const slno = this.props.slno;
-        
-    
+        console.log(idno)
         try{
-
             const response = await axios({
-                url : `/searchthisuser/${slno}`,
+                url :  `/acceptThisReq/${slno}`,
                 method : 'post',
                 data : {
-                    person : searchData
+                    idno : idno
                 }
-            })
-    
-            if(response.data.message == 'success'){
-                this.setState({
-                    personData : response.data.person
-                })
-                
-            }
-            
+            });
 
+            if(response.data.message == 'Successfully Added This User To Your Friend List ... You Can Chat With Him Now .'){
+
+                setTimeout(()=>{window.location.href = '/friendList'; window.location.reload()},1900);
+            }
+    
+            this.setState({
+                returnMessage : response.data.message,
+                open : true
+              })
 
         }catch(err){
             console.log(err)
         }
-        
-
     }
 
-        
-    async componentDidUpdate(prevProps){                    
-        const {searchData} = this.props.match.params;
-        if(prevProps.match.params.searchData != searchData){
-            
-            this.componentDidMount()
-        }
-    }
 
-    showAllSearch = ()=>{
-        if(this.state.personData){
-            if(this.state.personData.length>0){
-                return this.state.personData.map((each)=>{
+    showAllRequest = ()=>{
+        if(this.state.requestData){
+            if(this.state.requestData.length>0){
+                return this.state.requestData.map((each)=>{
                     return <div className='col'>
                     <div className="card cardwidth cardwidth2 brdred profilecardbg mb-4">
                     <div className='mx-auto mt-4 anim'>
@@ -104,8 +93,8 @@ export class SearchResult extends Component {
                     
                     <div className="card-body d-flex flex-column align-items-center">
                       <h5 className="card-title"><PersonIcon fontSize='large'/>@_{each.username}</h5>
-                      <p clasName="card-text"><BadgeIcon/> <span>Full Name : </span>{each.fullname}<br></br><PublicIcon /> <span>Country : </span>{each.country}<br></br><AccessibilityNewIcon /> <span>Age : </span>{each.age}<br></br><WcIcon /> <span>Gender : </span>{each.gedner}</p>
-                      <Link  onClick={(e)=>{this.addFriend(e,each._id)}} className="btn btn-sm btn-danger btndescardprofile text-center"><ManageAccountsIcon />Add Friend</Link>
+                      <p clasName="card-text"><BadgeIcon/> <span>Full Name : </span>{each.fullname}<br></br><PublicIcon /> <span>Country : </span>{each.country}<br></br><AccessibilityNewIcon /> <span>Age : </span>{each.age}<br></br><WcIcon /> <span>Gender : </span>{each.gender}</p>
+                      <Link  onClick={(e)=>{this.acceptFriend(e,each.senderID)}} className="btn btn-sm btn-danger btndescardprofile text-center"><ManageAccountsIcon />Accept !</Link>
 
                     </div>
                     </div>
@@ -118,34 +107,6 @@ export class SearchResult extends Component {
             return <div className='col mx-auto mt-4 nofriend'>
                 <h5>UwU You Dont Have Any Friend ...</h5>
             </div>
-        }
-    }
-    
-
-    addFriend = async(e,idval) =>{
-        e.preventDefault()
-        const sln = this.props.slno;
-        try{
-            const response = await axios({
-                url : `/addFriend/${sln}`,
-                method : 'post',
-                data : {
-                    usersln : idval
-                }
-        });
-
-        if(response.data.message == 'Successfully sent friend request, wait till the person accept it.'){
-
-            setTimeout(()=>{window.location.href = '/friendList'},2500);
-        }
-
-        this.setState({
-            returnMessage : response.data.message,
-            open : true
-          })
-
-        }catch(err){
-            console.log(err)
         }
     }
 
@@ -164,7 +125,40 @@ export class SearchResult extends Component {
     };
 
 
+    
+    async componentDidMount(){
+        
+        
+        const slno = this.props.slno;
+        
+    
+        try{
 
+            const response = await axios({
+                url : `/allMyRequests/${slno}`,
+                method : 'post',
+                data : {
+                    person : slno
+                }
+            })
+    
+            if(response.data.message == 'success'){
+                this.setState({
+                    requestData : response.data.requests
+                })
+                console.log(this.state.requestData)
+            }
+            
+
+
+        }catch(err){
+            console.log(err)
+        }
+        
+
+    }
+
+    
     render() {
         return (
             <Fragment>
@@ -178,19 +172,20 @@ export class SearchResult extends Component {
 
                     
                 </div>
-                <h4 className='tagsearch'>Search Result :</h4>
+                <h4 className='tagsearch'>Friend Requests :</h4>
                 <div className='friendbox'>
                     <div className='row row-cols-1 row-cols-md-3'>
 
-                        {this.showAllSearch()}
+
+                    {this.showAllRequest()}
 
 
-                        {!(this.state.personData.length>0) ? <div className='col mx-auto mt-4 nofriend'>
-                        <h5 className='text-center'>UwU The Search Username or Fullname Dont Exist ...</h5>
-                        </div> : null}
+                    {!(this.state.requestData.length>0) ? <div className='col mx-auto mt-4 nofriend'>
+                    <h5 className='text-center'>UwU No One Sent You Requests Saddd Life ...</h5>
+                    </div> : null}
 
 
-                        <Snackbar
+                    <Snackbar
                   open={this.state.open}
                   autoHideDuration={4000}
                   onClose={this.handleClose} // Removed parentheses
@@ -205,6 +200,7 @@ export class SearchResult extends Component {
                 </Alert>
               </Snackbar>
 
+                        
                     </div>
                 </div>
             </Fragment>
@@ -212,4 +208,4 @@ export class SearchResult extends Component {
     }
 }
 
-export default SearchResult
+export default FriendReqAll

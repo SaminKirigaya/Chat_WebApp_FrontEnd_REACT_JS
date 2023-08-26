@@ -74,7 +74,7 @@ export class Reg extends Component {
             document.getElementById('pass').value = '';
             document.getElementById('cpass').value = '';
 
-            setTimeout(()=>{window.location.href = '/verifyMe'},3000);
+            setTimeout(()=>{window.location.href = '/verifyMe'},1800);
           }
 
           this.setState({

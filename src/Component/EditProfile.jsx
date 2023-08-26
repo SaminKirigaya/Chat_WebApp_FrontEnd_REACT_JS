@@ -191,7 +191,7 @@ export class EditProfile extends Component {
 
                     localStorage.clear();
                     
-                    setTimeout(()=>{window.location.href = '/login'},2500);
+                    setTimeout(()=>{window.location.href = '/login'},1800);
                 }
 
                 this.setState({
@@ -229,7 +229,7 @@ export class EditProfile extends Component {
           <option value="Female">Female</option>
           <option value="Others">Others</option>
           </select></p>
-          <Link to='#' onClick={(e)=>{this.editProfileNow(e)}} className="btn btn-sm btn-primary btndescardprofile"><ManageAccountsIcon />Edit Submit</Link>
+          <Link to='#' onClick={(e)=>{this.editProfileNow(e)}} className="btn btn-sm btn-danger btndescardprofile"><ManageAccountsIcon />Edit Submit</Link>
           
         </div>
         </div>

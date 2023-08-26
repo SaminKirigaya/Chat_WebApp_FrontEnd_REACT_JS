@@ -46,7 +46,7 @@ export class VerifyMe extends Component {
                     document.getElementById('mail').value = '';
                     document.getElementById('otp').value = '';
     
-                    setTimeout(()=>{window.location.href = '/login'},2500);
+                    setTimeout(()=>{window.location.href = '/login'},1800);
                 }
                 this.setState({
                     returnMessage : response.data.message,

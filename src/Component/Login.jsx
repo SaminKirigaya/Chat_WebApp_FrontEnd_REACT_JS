@@ -64,7 +64,7 @@ export class Login extends Component {
             localStorage.setItem('image',response.data.image);
             localStorage.setItem('token',response.data.token);
             
-            setTimeout(()=>{window.location.href = '/allFriends'},2500);
+            setTimeout(()=>{window.location.href = '/allFriends'},1800);
           }
 
           this.setState({

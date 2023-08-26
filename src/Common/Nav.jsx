@@ -6,7 +6,7 @@ import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import LogoutIcon from '@mui/icons-material/Logout';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -33,7 +33,7 @@ import axios from 'axios';
   const ChangeEmote = React.lazy(()=>import('../Component/ChangeEmote'));
   const FriendList = React.lazy(()=>import('../Component/FriendList'));
   const SearchResult = React.lazy(()=>import('../Component/SearchResult'));
-
+  const FriendReqAll = React.lazy(()=>import('../Component/FriendReqAll'));
 
 
 export class Nav extends Component {
@@ -80,15 +80,11 @@ export class Nav extends Component {
 
     loadingEffect = ()=>{
         return  <div className='container-fluid loader d-flex justify-content-center align-items-center'>
-            <div class="spinner-border text-danger" role="status">
-            <span class="visually-hidden">Loading...</span>
+            <div className="spinner-border text-danger" style={{width: '3rem', height: '3rem'}} role="status">
+            <span className="visually-hidden">Loading...</span>
             </div>
-            <div class="spinner-border text-warning" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <div class="spinner-border text-info" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+            
+            
         </div>
     }
 
@@ -145,6 +141,16 @@ export class Nav extends Component {
                 : null}
 
 
+
+                {
+                    this.state.token != '' ? 
+                <div className='mb-2 mt-1 anim'>
+                    <Link className='verifyme' to='/friendReqAll'><PersonAddIcon fontSize='large'/></Link>
+                </div>
+                : null
+                }
+
+
                 {
                     this.state.token != '' ? 
                 <div className='mb-2 mt-1 anim'>
@@ -178,6 +184,7 @@ export class Nav extends Component {
                     <Route exact path='/changeEmote/:slno' component={(props)=>(<ChangeEmote {...props}/>)} />
                     <Route exact path='/friendList' component={()=>(<FriendList slno={this.state.slno}/>)} />
                     <Route exact path='/searchresult/:searchData' component={(props)=>(<SearchResult slno={this.state.slno} {...props}/>)} />
+                    <Route exact path='/friendReqAll' component={()=>(<FriendReqAll slno={this.state.slno} />)} />
 
                     </Switch>
             </Suspense>

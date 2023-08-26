@@ -1911,3 +1911,14 @@ body::-webkit-scrollbar {
 .nofriend{
     color: #dd3d8a;
 }
+
+
+.form-control{
+    border: 0.1rem solid #dd3d8a;
+}
+.form-group{
+    border: 0.1rem solid #dd3d8a;
+}
+.form-select{
+    border: 0.1rem solid #dd3d8a;
+}

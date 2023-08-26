@@ -54,7 +54,7 @@ export class Logout extends Component {
       if(response.data.message == 'Successfully Logged Out ...'){
         localStorage.clear();
 
-        setTimeout(()=>{window.location.href = '/login'},2500);
+        setTimeout(()=>{window.location.href = '/login'},1800);
 
       }
 
@@ -94,7 +94,7 @@ export class Logout extends Component {
                   <div className="card-body">
                     
                     <p className="card-text">You sure you want to logout ??? Once logout all unsaved data will be lost !!!</p>
-                    <Link to='#' onClick={(e)=>{this.logMeOut(e)}} className="btn btn-sm btn-primary btndescardprofile mt-1"><LogoutIcon />Logout !</Link>
+                    <Link to='#' onClick={(e)=>{this.logMeOut(e)}} className="btn btn-sm btn-danger btndescardprofile mt-1"><LogoutIcon />Logout !</Link>
                   </div>
                 </div>
                 </div>

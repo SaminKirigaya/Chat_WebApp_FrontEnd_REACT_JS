@@ -56,7 +56,7 @@ export class DeleteId extends Component {
       if(response.data.message == 'Successfully Deleted Account ... Thanks For Staying With Us All This Time.'){
         localStorage.clear();
 
-        setTimeout(()=>{window.location.href = '/login'},2500);
+        setTimeout(()=>{window.location.href = '/login'},1800);
 
       }
 
@@ -96,7 +96,7 @@ export class DeleteId extends Component {
                   <div className="card-body">
                     
                     <p className="card-text">You sure you want to Delete Account ??? Once Deleted no turning back !!!</p>
-                    <Link to='#' onClick={(e)=>{this.DeleteMe(e)}} className="btn btn-sm btn-primary btndescardprofile mt-1"><DeleteIcon />Delete !</Link>
+                    <Link to='#' onClick={(e)=>{this.DeleteMe(e)}} className="btn btn-sm btn-danger btndescardprofile mt-1"><DeleteIcon />Delete !</Link>
                   </div>
                 </div>
                 </div>

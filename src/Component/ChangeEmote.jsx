@@ -68,7 +68,7 @@ export class ChangeEmote extends Component {
       if(response.data.message == 'User Avatar successfully updated ... Please log in again to confirm it was you ...'){
         localStorage.clear();
 
-        setTimeout(()=>{window.location.href = '/login'},2500);
+        setTimeout(()=>{window.location.href = '/login'},1800);
       }
 
       this.setState({
