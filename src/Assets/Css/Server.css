@@ -1,4 +1,9 @@
 @media (min-width:350px) and (max-width:374px){
+    .msgimgbox{
+        width: 40vw !important;
+        height:20vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -189,6 +194,11 @@
 }
 
 @media (min-width:375px) and (max-width:389px){
+    .msgimgbox{
+        width: 40vw !important;
+        height:23vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -197,8 +207,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1rem;
         color:white;
-        min-height: 24vh !important;
-        max-height: 24vh !important;
+        min-height: 29vh !important;
+        max-height: 29vh !important;
      }
     .mymsg{
         background-color: #e80070;
@@ -227,8 +237,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1rem;
         color:#ffffff;
-        min-height: 24vh !important;
-        max-height: 24vh !important;
+        min-height: 29vh !important;
+        max-height: 29vh !important;
      }
     .sendingbox{
         display: flex;
@@ -369,6 +379,11 @@
 
 
 @media (min-width:390px) and (max-width:411px){
+    .msgimgbox{
+        width: 40vw !important;
+        height:29vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -552,6 +567,11 @@
 
 
 @media (min-width:412px) and (max-width:539px){
+    .msgimgbox{
+        width: 40vw !important;
+        height:31vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -732,6 +752,11 @@
 }
 
 @media (min-width:540px) and (max-width:767px){
+    .msgimgbox{
+        width: 28.5vw !important;
+        height:23vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -921,6 +946,11 @@
 
 
 @media (min-width:768px) and (max-width:819px){
+    .msgimgbox{
+        width: 31.5vw !important;
+        height:27vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -1102,6 +1132,11 @@
 }
 
 @media (min-width:820px) and (max-width:911px){
+    .msgimgbox{
+        width: 31.5vw !important;
+        height:27vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -1286,6 +1321,11 @@
 
 
 @media (min-width:912px) and (max-width:1023px){
+    .msgimgbox{
+        width: 31.5vw !important;
+        height:27vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -1468,6 +1508,11 @@
 
 
 @media (min-width:1024px) and (max-width:1279px){
+    .msgimgbox{
+        width: 33vw !important;
+        height:19vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -1644,6 +1689,11 @@
 
 
 @media (min-width:1280px) and (max-width:1365px){
+    .msgimgbox{
+        width: 34.5vw !important;
+        height:16vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -1700,8 +1750,14 @@
         max-height: 68vh;
         min-width: 76vw;
         max-width: 76vw;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+}
+.friendbox::-webkit-scrollbar {
+    display: none;
+  }
         
-    }
+    
     .tagsearch{
         color: #dd3d8a;
         position: absolute;
@@ -1820,6 +1876,11 @@
 
 
 @media (min-width:1366px) and (max-width:1919px){
+    .msgimgbox{
+        width: 34.5vw !important;
+        height:16vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -1879,7 +1940,14 @@
         max-width: 76vw;
        
         overflow-y: auto;
-    }
+    
+
+    -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+}
+.friendbox::-webkit-scrollbar {
+    display: none;
+  }
     .tagsearch{
         color: #dd3d8a;
         position: absolute;
@@ -1981,6 +2049,11 @@
 
 
 @media (min-width:1920px) and (max-width:3839px){
+    .msgimgbox{
+        width: 35.5vw !important;
+        height:19.5vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -2201,6 +2274,11 @@
 
 
 @media (min-width:3840px) and (max-width:7999px){
+    .msgimgbox{
+        width: 37vw !important;
+        height:22.5vw !important;
+        object-fit: fill !important;
+    }
     .mymsgimg{
         background-color: #e80070;
         position: relative;
@@ -2621,4 +2699,11 @@ body::-webkit-scrollbar {
     
     height: 78vh !important;
     overflow-y: auto;
+}
+
+.textbg{
+    padding: 0.5rem;
+    background-color: pink;
+    border-radius: 0.5rem;
+    color: #ff006d;
 }

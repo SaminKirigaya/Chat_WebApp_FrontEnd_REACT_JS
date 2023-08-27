@@ -7,6 +7,7 @@ import ScrollableFeed from 'react-scrollable-feed';
 
 import Stack from '@mui/material/Stack';
 import { io } from 'socket.io-client';
+import axios from 'axios';
 
 const socket = io('http://localhost:8000');
 
@@ -32,23 +33,48 @@ export class Messaging extends Component {
             allmessages : [],
             message : '',
             placeval : 'Insert Message ...',
-            disabled : false
+            disabled : false,
+            username : ''
         }
         this.cardContainerRef = React.createRef();
 
+        
         socket.on('privateMessage', (message) => {
             this.setState((prevState) => ({
-              allmessages: [...prevState.allmessages, { ...message, sender: this.props.friendId }],
+              allmessages: [...prevState.allmessages, { text: message,  sender: this.props.match.params.friendId }],
             }));
           });
     }
     
     async componentDidMount(){
+        const myusersl = this.props.userId;
+        try{
+            const response = await axios.get(`/getmyusername/${myusersl}`,{
+                headers : {
+                    'Content-Type' : 'application/json'
+                }
+            });
+
+            if(response.data.message == 'success'){
+                this.setState({
+                    username : response.data.username
+                })
+                
+            }
+
+        }catch(err){
+            console.log(err)
+        }
     
+        socket.on('connect', () => {
+            console.log('Connected to socket server');
+          });
         const { userId } = this.props;
+        
         socket.emit('authenticate', userId);
         
     }
+
 
  
 
@@ -56,12 +82,14 @@ export class Messaging extends Component {
             if(file && filename){
                 this.setState({
                     image : file,
+                    message : '',
                     placeval : filename,
                     disabled : true
                 })
             }else{
                 this.setState({
                     image : null,
+                    message : '',
                     placeval : 'Insert Message ...',
                     disabled : false
                 })
@@ -88,14 +116,17 @@ export class Messaging extends Component {
             fromUserId: userId,
             toUserId: friendId,
             myToken : Token,
-            message: message,
-            image: image,
+            message: this.state.message,
+            image: this.state.image,
+            
+            sendingtime : getCurrentDateTime()
+           
           });
     
           this.setState((prevState) => ({
             allmessages: [
               ...prevState.allmessages,
-              { text: message, sender: userId, senderAvatar : myImg, image: image , sendingTime: getCurrentDateTime()},
+              { text: message, sender: userId, senderAvatar : myImg, image: image , sendingtime: getCurrentDateTime(), username: this.state.username},
             ],
             message: '',
             image: null,
@@ -105,6 +136,71 @@ export class Messaging extends Component {
           }));
         }
       };
+
+      loadMessages = ()=>{
+        const userId = this.props.userId;
+        if(this.state.allmessages.length>0){
+            return this.state.allmessages.map((each)=>{
+                console.log(each)
+                if(each.sender == userId){
+                    if(each.text){
+                        return  <div class="card mymsg">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            <p class="card-text textbg">{each.text}</p>
+                            <sup>{each.sendingtime}</sup>
+                            
+                        </div>
+                        </div>
+                    }else{
+
+                        const blob = new Blob([each.image], { type: 'image/jpeg' });
+
+                        // Create Data URL from Blob
+                        const dataUrl = URL.createObjectURL(blob);
+
+                        return  <div class="card mymsgimg">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            
+                            <img class='msgimgbox' src={dataUrl}/>
+                            <sup>{each.sendingtime}</sup>
+                            
+                            
+                        </div>
+                        </div>
+                    }
+                    
+
+                }else{
+                    if(each.text[0].message){
+                        return  <div class="card sendermsg">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
+                            <p class="card-text textbg">{each.text[0].message}</p>
+                            
+                        </div>
+                        </div>
+        
+                    }else{
+
+                        const blob = new Blob([each.text[0].image], { type: 'image/jpeg' });
+
+                        // Create Data URL from Blob
+                        const dataUrl = URL.createObjectURL(blob);
+                        return  <div class="card sendermsgimg">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
+                            <img class='msgimgbox' src={dataUrl}/>
+                            
+                        </div>
+                        </div>
+                    }
+                    
+                }
+            })
+        }
+      }
 
     render() {
         return (
@@ -118,7 +214,7 @@ export class Messaging extends Component {
                 
             
                 <input id='txtmsg' type="text"  onChange={(e)=>{this.setState({message : e.target.value})}} value={this.state.message} className="form-control" placeholder={this.state.placeval} aria-label="Recipient's message" aria-describedby="button-addon2" disabled={this.state.disabled}/>
-                <button className="btn btn-outline-secondary desbtnsearch" onClick={this.handleSendMessage} type="button" id="button-addon2"><SendIcon /></button>
+                <button className="btn btn-outline-secondary desbtnsearch" onClick={(e)=>{this.handleSendMessage(e)}} type="button" id="button-addon2"><SendIcon /></button>
               </div>
                 </div>
 
@@ -129,65 +225,7 @@ export class Messaging extends Component {
 
                 <ScrollableFeed className="card-container" id="cardContainer">
  
-                <div class="card mymsg">
-                <div class="card-body">
-                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp;Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    
-                </div>
-                </div>
-
-
-
-                <div class="card sendermsg">
-                <div class="card-body">
-                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    
-                </div>
-                </div>
-
-
-
-                <div class="card sendermsg">
-                <div class="card-body">
-                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    
-                </div>
-                </div>
-
-
-
-                <div class="card sendermsg">
-                <div class="card-body">
-                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    
-                </div>
-                </div>
-
-
-
-
-
-                <div class="card sendermsgimg">
-                <div class="card-body">
-                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    
-                </div>
-                </div>
-
-
-
-                <div class="card mymsgimg">
-                <div class="card-body">
-                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp;Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    
-                </div>
-                </div>
+                {this.loadMessages()}
 
 
 
