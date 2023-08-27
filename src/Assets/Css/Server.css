@@ -1,4 +1,15 @@
 @media (min-width:350px) and (max-width:374px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 22%;
+        width: 80%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 24vh !important;
+        max-height: 24vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -17,6 +28,17 @@
         margin-bottom: 0.5rem;
         border-radius: 1rem;
         color:#ffffff
+     }
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 80%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 24vh !important;
+        max-height: 24vh !important;
      }
     .sendingbox{
         display: flex;
@@ -167,6 +189,17 @@
 }
 
 @media (min-width:375px) and (max-width:389px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 25%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 24vh !important;
+        max-height: 24vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -185,6 +218,17 @@
         margin-bottom: 0.5rem;
         border-radius: 1rem;
         color:#ffffff
+     }
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 24vh !important;
+        max-height: 24vh !important;
      }
     .sendingbox{
         display: flex;
@@ -325,6 +369,17 @@
 
 
 @media (min-width:390px) and (max-width:411px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 25%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 24vh !important;
+        max-height: 24vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -343,6 +398,19 @@
         margin-bottom: 0.5rem;
         border-radius: 1rem;
         color:#ffffff
+     }
+
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 24vh !important;
+        max-height: 24vh !important;
+
      }
     .sendingbox{
         display: flex;
@@ -484,6 +552,17 @@
 
 
 @media (min-width:412px) and (max-width:539px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 25%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 24vh !important;
+        max-height: 24vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -492,6 +571,19 @@
         margin-bottom: 0.5rem;
         border-radius: 1rem;
         color:white
+     }
+
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 78%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 24vh !important;
+        max-height: 24vh !important;
+
      }
     
      .sendermsg{
@@ -640,6 +732,17 @@
 }
 
 @media (min-width:540px) and (max-width:767px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 30vh !important;
+        max-height: 30vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -650,6 +753,18 @@
         color:white
      }
     
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 30vh !important;
+        max-height: 30vh !important;
+
+     }
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -806,6 +921,17 @@
 
 
 @media (min-width:768px) and (max-width:819px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 29vh !important;
+        max-height: 29vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -816,6 +942,17 @@
         color:white
      }
     
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 29vh !important;
+        max-height: 29vh !important;
+     }
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -965,6 +1102,17 @@
 }
 
 @media (min-width:820px) and (max-width:911px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 27vh !important;
+        max-height: 27vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -975,6 +1123,17 @@
         color:white
      }
     
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 27vh !important;
+        max-height: 27vh !important;
+     }
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -1127,6 +1286,17 @@
 
 
 @media (min-width:912px) and (max-width:1023px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 25vh !important;
+        max-height: 25vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -1137,6 +1307,17 @@
         color:white
      }
     
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 25vh !important;
+        max-height: 25vh !important;
+     }
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -1287,6 +1468,17 @@
 
 
 @media (min-width:1024px) and (max-width:1279px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -1297,6 +1489,18 @@
         color:white
      }
     
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+
+     }
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -1440,6 +1644,17 @@
 
 
 @media (min-width:1280px) and (max-width:1365px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -1450,6 +1665,17 @@
         color:white
      }
     
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -1594,6 +1820,18 @@
 
 
 @media (min-width:1366px) and (max-width:1919px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
+
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -1604,6 +1842,17 @@
         color:white
      }
     
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -1732,6 +1981,17 @@
 
 
 @media (min-width:1920px) and (max-width:3839px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -1742,6 +2002,17 @@
         color:white
      }
     
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -1930,6 +2201,17 @@
 
 
 @media (min-width:3840px) and (max-width:7999px){
+    .mymsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 44%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:white;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
     .mymsg{
         background-color: #e80070;
         position: relative;
@@ -1940,6 +2222,19 @@
         color:white
      }
     
+
+     .sendermsgimg{
+        background-color: #e80070;
+        position: relative;
+        left: 0%;
+        width: 55%;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+        color:#ffffff;
+        min-height: 46vh !important;
+        max-height: 46vh !important;
+     }
+
      .sendermsg{
         background-color: #e80070;
         position: relative;
@@ -2312,7 +2607,7 @@ body::-webkit-scrollbar {
     min-height: 80vh;
     max-height: 80vh; /* Set your desired max height */
     overflow-y: scroll;
-    border: 1px solid #ff5757;
+   
     padding: 1rem;
      -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */

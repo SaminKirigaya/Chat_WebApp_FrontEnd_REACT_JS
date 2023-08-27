@@ -185,7 +185,7 @@ export class Nav extends Component {
                     <Route exact path='/friendList' component={()=>(<FriendList slno={this.state.slno}/>)} />
                     <Route exact path='/searchresult/:searchData' component={(props)=>(<SearchResult slno={this.state.slno} {...props}/>)} />
                     <Route exact path='/friendReqAll' component={()=>(<FriendReqAll slno={this.state.slno} />)} />
-                    <Route exact path='/message/:usersl' component={(props)=>(<Messaging slno={this.state.slno} {...props}/>)} />
+                    <Route exact path='/message/:friendId' component={(props)=>(<Messaging userId={this.state.slno} image={this.state.image} token={this.state.token} {...props}/>)} />
 
                     </Switch>
             </Suspense>

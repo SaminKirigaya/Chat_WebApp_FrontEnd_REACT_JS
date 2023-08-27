@@ -1,0 +1,38 @@
+<div class="card mymsg">
+                <div class="card-body">
+                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp;Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    
+                </div>
+                </div>
+
+
+
+                <div class="card sendermsg">
+                <div class="card-body">
+                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    
+                </div>
+                </div>
+
+
+
+
+                <div class="card sendermsgimg">
+                <div class="card-body">
+                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    
+                </div>
+                </div>
+
+
+
+                <div class="card mymsgimg">
+                <div class="card-body">
+                    <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp;Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    
+                </div>
+                </div>
