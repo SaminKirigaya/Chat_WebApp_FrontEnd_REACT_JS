@@ -5,43 +5,43 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 22%;
         width: 80%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 24vh !important;
         max-height: 24vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 22%;
         width: 80%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 80%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color:#e80070;
      }
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 80%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color:#e80070;
         min-height: 24vh !important;
         max-height: 24vh !important;
      }
@@ -200,43 +200,43 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 25%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color:#e80070;
         min-height: 29vh !important;
         max-height: 29vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 25%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070;
      }
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color:#e80070;
         min-height: 29vh !important;
         max-height: 29vh !important;
      }
@@ -385,44 +385,44 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 25%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 24vh !important;
         max-height: 24vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 25%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070;
      }
 
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 24vh !important;
         max-height: 24vh !important;
 
@@ -573,47 +573,47 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 25%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 24vh !important;
         max-height: 24vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 25%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color:#e80070;
      }
 
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color:#e80070;
         min-height: 24vh !important;
         max-height: 24vh !important;
 
      }
     
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 78%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070;
      }
     .sendingbox{
         display: flex;
@@ -758,46 +758,46 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 30vh !important;
         max-height: 30vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 30vh !important;
         max-height: 30vh !important;
 
      }
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070;
      }
 
 
@@ -952,45 +952,45 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 29vh !important;
         max-height: 29vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 29vh !important;
         max-height: 29vh !important;
      }
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070
      }
     .sendingbox{
         display: flex;
@@ -1138,45 +1138,45 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 27vh !important;
         max-height: 27vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070
      }
     
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 27vh !important;
         max-height: 27vh !important;
      }
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070
      }
     .sendingbox{
         display: flex;
@@ -1327,45 +1327,45 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 25vh !important;
         max-height: 25vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070
      }
     
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 25vh !important;
         max-height: 25vh !important;
      }
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color:  #e80070;
      }
     .sendingbox{
         display: flex;
@@ -1514,46 +1514,46 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
 
      }
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070
      }
     .sendingbox{
         display: flex;
@@ -1695,45 +1695,45 @@
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color:#e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color:#e80070
      }
     .sendingbox{
         display: flex;
@@ -1876,52 +1876,55 @@
 
 
 @media (min-width:1366px) and (max-width:1919px){
+    .bdisppad{
+        padding: 1rem;
+    }
     .msgimgbox{
         width: 34.5vw !important;
         height:16vw !important;
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
 
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070
      }
     
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070
      }
     .sendingbox{
         display: flex;
@@ -2049,51 +2052,54 @@
 
 
 @media (min-width:1920px) and (max-width:3839px){
+    .bdisppad{
+        padding: 1rem;
+    }
     .msgimgbox{
         width: 35.5vw !important;
         height:19.5vw !important;
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color:#e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color: #e80070;
      }
     .sendingbox{
         display: flex;
@@ -2274,53 +2280,56 @@
 
 
 @media (min-width:3840px) and (max-width:7999px){
+    .bdisppad{
+        padding: 1rem;
+    }
     .msgimgbox{
         width: 37vw !important;
         height:22.5vw !important;
         object-fit: fill !important;
     }
     .mymsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white;
+        border-radius: 1.5rem;
+        color: #e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
     .mymsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 44%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:white
+        border-radius: 2rem;
+        color: #e80070;
      }
     
 
      .sendermsgimg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff;
+        border-radius: 1.5rem;
+        color:#e80070;
         min-height: 46vh !important;
         max-height: 46vh !important;
      }
 
      .sendermsg{
-        background-color: #e80070;
+        background-color: #ffeff7;
         position: relative;
         left: 0%;
         width: 55%;
         margin-bottom: 0.5rem;
-        border-radius: 1rem;
-        color:#ffffff
+        border-radius: 2rem;
+        color:#e80070;
      }
     .sendingbox{
         display: flex;
@@ -2703,7 +2712,59 @@ body::-webkit-scrollbar {
 
 .textbg{
     padding: 0.5rem;
-    background-color: pink;
+    background-color: rgba(255, 255, 255, 0.76);
     border-radius: 0.5rem;
     color: #ff006d;
+}
+
+.smallborder{
+    border : 0.1rem solid;
+}
+
+.sizebigmsg{
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+}
+
+.sizebigmsg:hover{
+    transform: scale(1.04);
+
+}
+
+
+.badgebg{
+    background-color: white !important;
+    color: #e80070 !important ;
+}
+
+
+.notimain{
+    width: 70%;
+    min-height: 100vh;
+  
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding-top: 7rem;
+}
+
+.notimain::-webkit-scrollbar {
+display: none;
+}
+
+.wball{
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.cardwid{
+    min-width: 100% !important;
+    margin-bottom: 0.9rem;
+    background-color: #ffeff7;
+    color: #e80070;
+    border : 0.1rem solid #dd3d8a
+}
+
+.texdes{
+    color: #e80070;
 }

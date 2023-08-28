@@ -174,7 +174,7 @@ export class FriendReqAll extends Component {
                 </div>
                 <h4 className='tagsearch'>Friend Requests :</h4>
                 <div className='friendbox'>
-                    <div className='row row-cols-1 row-cols-md-3'>
+                    <div className='row row-cols-1 row-cols-md-3 bdisppad'>
 
 
                     {this.showAllRequest()}

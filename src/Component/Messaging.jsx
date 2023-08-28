@@ -25,10 +25,23 @@ function getCurrentDateTime() {
     return now.toLocaleString('en-US', options);
   }
 
+  function getDateFormated(value) {
+    const now = new Date(value);
+    const options = {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    };
+    return now.toLocaleString('en-US', options);
+  }
 export class Messaging extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            oldMessages : [],
             image : null,
             allmessages : [],
             message : '',
@@ -38,16 +51,25 @@ export class Messaging extends Component {
         }
         this.cardContainerRef = React.createRef();
 
+        const userId = this.props.userId;
+        const {friendId} = this.props.match.params;
         
         socket.on('privateMessage', (message) => {
             this.setState((prevState) => ({
               allmessages: [...prevState.allmessages, { text: message,  sender: this.props.match.params.friendId }],
             }));
           });
+
+          
+
+
     }
     
     async componentDidMount(){
         const myusersl = this.props.userId;
+        
+        
+        var {friendId} = this.props.match.params;
         try{
             const response = await axios.get(`/getmyusername/${myusersl}`,{
                 headers : {
@@ -60,6 +82,21 @@ export class Messaging extends Component {
                     username : response.data.username
                 })
                 
+            }
+
+            const response2 = await axios({
+                url : `/getmyoldconv/${myusersl}`,
+                method : 'post',
+                data: {
+                    thisFriend : friendId
+                }
+            })
+
+            if(response2.data.message == 'success'){
+                this.setState({
+                    oldMessages : response2.data.oldConv
+                })
+                console.log(this.state.oldMessages)
             }
 
         }catch(err){
@@ -75,6 +112,12 @@ export class Messaging extends Component {
         
     }
 
+    async componentDidUpdate(prevProps){
+        var {friendId} = this.props.match.params;
+        if(friendId != prevProps.match.params.friendId){
+            this.componentDidMount();
+        }
+    }
 
  
 
@@ -122,6 +165,8 @@ export class Messaging extends Component {
             sendingtime : getCurrentDateTime()
            
           });
+
+        
     
           this.setState((prevState) => ({
             allmessages: [
@@ -137,16 +182,79 @@ export class Messaging extends Component {
         }
       };
 
-      loadMessages = ()=>{
+      PreviousChaT = ()=>{
         const userId = this.props.userId;
+        if(this.state.oldMessages.length>0){
+            return this.state.oldMessages.map((each)=>{
+                console.log(each)
+                if(each.senderId == userId){
+                    if(each.message){
+                        return  <div class="card mymsg smallborder sizebigmsg">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            <p class="card-text textbg">{each.message}</p>
+                            <sup>{getDateFormated(each.sendingtime)}</sup>
+                            
+                        </div>
+                        </div>
+                    }else{
+
+                        
+
+                        return  <div class="card mymsgimg smallborder sizebigmsg">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            
+                            <img class='msgimgbox' src={each.image}/>
+                            <sup>{getDateFormated(each.sendingtime)}</sup>
+                            
+                            
+                        </div>
+                        </div>
+                    }
+                    
+
+                }else{
+                    console.log(each)
+                    if(each.message){
+                        return  <div class="card sendermsg smallborder sizebigmsg">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
+                            <p class="card-text textbg">{each.message}</p>
+                            <sup>{getDateFormated(each.sendingtime)}</sup>
+
+                        </div>
+                        </div>
+        
+                    }else{
+
+                        
+                        return  <div class="card sendermsgimg smallborder sizebigmsg">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
+                            <img class='msgimgbox' src={each.image}/>
+                            <sup>{getDateFormated(each.sendingtime)}</sup>
+                        </div>
+                        </div>
+                    }
+                    
+                }
+            })
+        }
+      }
+
+      loadMessages = ()=>{
+        const {friendId} = this.props.match.params;
+        const userId = this.props.userId;
+
         if(this.state.allmessages.length>0){
             return this.state.allmessages.map((each)=>{
                 console.log(each)
                 if(each.sender == userId){
                     if(each.text){
-                        return  <div class="card mymsg">
+                        return  <div class="card mymsg smallborder sizebigmsg">
                         <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             <p class="card-text textbg">{each.text}</p>
                             <sup>{each.sendingtime}</sup>
                             
@@ -159,7 +267,7 @@ export class Messaging extends Component {
                         // Create Data URL from Blob
                         const dataUrl = URL.createObjectURL(blob);
 
-                        return  <div class="card mymsgimg">
+                        return  <div class="card mymsgimg smallborder sizebigmsg">
                         <div class="card-body">
                             <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             
@@ -173,29 +281,34 @@ export class Messaging extends Component {
                     
 
                 }else{
-                    if(each.text[0].message){
-                        return  <div class="card sendermsg">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
-                            <p class="card-text textbg">{each.text[0].message}</p>
-                            
-                        </div>
-                        </div>
-        
-                    }else{
-
-                        const blob = new Blob([each.text[0].image], { type: 'image/jpeg' });
-
-                        // Create Data URL from Blob
-                        const dataUrl = URL.createObjectURL(blob);
-                        return  <div class="card sendermsgimg">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat5.jpg" /> &nbsp; Special title treatment</h5>
-                            <img class='msgimgbox' src={dataUrl}/>
-                            
-                        </div>
-                        </div>
+                    console.log(each)
+                    if(each.text[0].sentBy == friendId){
+                        if(each.text[0].message){
+                            return  <div class="card sendermsg smallborder sizebigmsg wball">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
+                                <p class="card-text textbg">{each.text[0].message}</p>
+                                <sup>{each.text[0].sendingtime}</sup>
+    
+                            </div>
+                            </div>
+            
+                        }else{
+    
+                            const blob = new Blob([each.text[0].image], { type: 'image/jpeg' });
+    
+                            // Create Data URL from Blob
+                            const dataUrl = URL.createObjectURL(blob);
+                            return  <div class="card sendermsgimg smallborder sizebigmsg">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
+                                <img class='msgimgbox' src={dataUrl}/>
+                                <sup>{each.text[0].sendingtime}</sup>
+                            </div>
+                            </div>
+                        }
                     }
+                    
                     
                 }
             })
@@ -225,6 +338,7 @@ export class Messaging extends Component {
 
                 <ScrollableFeed className="card-container" id="cardContainer">
  
+                {this.PreviousChaT()}
                 {this.loadMessages()}
 
 
