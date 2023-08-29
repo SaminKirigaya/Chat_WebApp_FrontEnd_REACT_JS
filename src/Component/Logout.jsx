@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-
+import { io } from 'socket.io-client';
 import {
     BrowserRouter as Router,
     Switch,
@@ -20,7 +20,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-
+const socket = io('http://localhost:8000');
 export class Logout extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +28,16 @@ export class Logout extends Component {
       returnMessage : '',
       open : false
     }
+
+    socket.on('notification', (data)=>{
+      localStorage.setItem('totalNots',data)
+  })
+  }
+
+  async componentDidMount(){
+    const { userslno } = this.props;
+      
+      socket.emit('authenticate', userslno);
   }
 
   handleClick = () => {

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
+import { io } from 'socket.io-client';
 
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
@@ -30,6 +31,7 @@ import {
   } from "react-router-dom";
 import axios from 'axios';
 
+const socket = io('http://localhost:8000');
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
@@ -43,6 +45,10 @@ export class SearchResult extends Component {
             open: false,
             returnMessage : ''
         }
+
+        socket.on('notification', (data)=>{
+            localStorage.setItem('totalNots',data)
+        })
     }
 
 
@@ -74,7 +80,9 @@ export class SearchResult extends Component {
         }catch(err){
             console.log(err)
         }
+
         
+        socket.emit('authenticate', slno);
 
     }
 

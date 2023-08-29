@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import { io } from 'socket.io-client';
 
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+
 
 import {
     BrowserRouter as Router,
@@ -16,6 +18,7 @@ import {
 import axios from 'axios';
 
 
+const socket = io('http://localhost:8000');
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
@@ -30,19 +33,48 @@ export class ChangeEmote extends Component {
             open : false,
             imageselected : ''
         }
+
+        socket.on('notification', (data)=>{
+          localStorage.setItem('totalNots',data)
+      })
+
+    }
+
+    async componentDidMount(){
+
+
+      const { slno } = this.props;
+        
+        socket.emit('authenticate', slno);
     }
     
-    changeIt = (name)=>{
+    changeIt = (name, idname)=>{
       this.setState({
         imageselected : name
       })
+
+      const totalid = ["id1","id2","id3","id4","id5","id6","id7","id8","id9"];
+      totalid.map(async(each)=>{
+        if(each == idname){
+          document.getElementById(each).classList.add('getBig')
+        }else{
+          try{
+            document.getElementById(each).classList.remove('getBig')
+          }catch(err){
+            console.log(err)
+          }
+          
+        }
+      })
+
     }
 
-
+    // material ui snakebar
     handleClick = () => {
       this.setState({open : true})
     };
   
+    // material ui snakebar
   handleClose = (event, reason) => {
   if (reason === 'clickaway') {
       return;
@@ -89,19 +121,19 @@ export class ChangeEmote extends Component {
 
             <div class="card cardb d-flex justify-content-start mx-auto" >
             <Stack direction="row" spacing={2}>
-            <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat1.jpg")}}><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat1.jpg" sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a'}}
+            <div id='id1' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat1.jpg",'id1')}}><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat1.jpg" sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a'}}
             /></div>
         
-            <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat2.jpg")}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat2.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
+            <div id='id2' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat2.jpg",'id2')}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat2.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
             /></div>
 
-             <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat3.jpg")}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat3.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
+             <div id='id3' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat3.jpg",'id3')}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat3.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
             /></div>
 
-            <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat4.jpg")}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat4.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
+            <div id='id4' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat4.jpg",'id4')}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat4.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
             /></div>
 
-            <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat5.jpg")}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat5.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
+            <div id='id5' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat5.jpg",'id5')}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat5.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
             /></div>
 
             
@@ -115,7 +147,7 @@ export class ChangeEmote extends Component {
             <div className='card cardb mt-4 mx-auto'>
             <Stack direction="row" spacing={2}>
 
-            <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat6.jpg")}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat6.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a', 
+            <div id='id6' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat6.jpg",'id6')}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat6.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a', 
               // your hover animation styles here
               
               
@@ -123,13 +155,13 @@ export class ChangeEmote extends Component {
             /></div>
             
 
-            <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat7.jpg")}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat7.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
+            <div id='id7' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat7.jpg",'id7')}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat7.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
             /></div>
 
-            <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat8.jpg")}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat8.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
+            <div id='id8' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat8.jpg",'id8')}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat8.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
             /></div>
 
-            <div className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat9.jpg")}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat9.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
+            <div id='id9' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat9.jpg",'id9')}}><Avatar alt="Remy Sharp" src='http://localhost:8000/public/images/cat9.jpg' sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a' }}
             /></div>
 
            

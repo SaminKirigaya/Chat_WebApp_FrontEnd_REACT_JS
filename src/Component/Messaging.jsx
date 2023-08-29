@@ -60,6 +60,13 @@ export class Messaging extends Component {
             }));
           });
 
+        socket.on('notification', (data)=>{
+            localStorage.setItem('totalNots',data)
+        })
+
+        socket.on('navThreeLastUsers', (data)=>{
+            console.log(data)
+        })
           
 
 
@@ -96,7 +103,7 @@ export class Messaging extends Component {
                 this.setState({
                     oldMessages : response2.data.oldConv
                 })
-                console.log(this.state.oldMessages)
+                
             }
 
         }catch(err){
@@ -186,7 +193,7 @@ export class Messaging extends Component {
         const userId = this.props.userId;
         if(this.state.oldMessages.length>0){
             return this.state.oldMessages.map((each)=>{
-                console.log(each)
+                
                 if(each.senderId == userId){
                     if(each.message){
                         return  <div class="card mymsg smallborder sizebigmsg">
@@ -215,7 +222,7 @@ export class Messaging extends Component {
                     
 
                 }else{
-                    console.log(each)
+                    
                     if(each.message){
                         return  <div class="card sendermsg smallborder sizebigmsg">
                         <div class="card-body">
@@ -249,7 +256,7 @@ export class Messaging extends Component {
 
         if(this.state.allmessages.length>0){
             return this.state.allmessages.map((each)=>{
-                console.log(each)
+                
                 if(each.sender == userId){
                     if(each.text){
                         return  <div class="card mymsg smallborder sizebigmsg">
@@ -281,7 +288,7 @@ export class Messaging extends Component {
                     
 
                 }else{
-                    console.log(each)
+                   
                     if(each.text[0].sentBy == friendId){
                         if(each.text[0].message){
                             return  <div class="card sendermsg smallborder sizebigmsg wball">

@@ -38,6 +38,8 @@ import axios from 'axios';
   const Messaging = React.lazy(()=>import('../Component/Messaging'));
   const Notification = React.lazy(()=>import('../Component/Notification'));
 
+
+
 export class Nav extends Component {
     constructor(props) {
         super(props);
@@ -45,37 +47,29 @@ export class Nav extends Component {
             token : '',
             image : '',
             slno : '',
-            notiamount : 0
+            notiamount : 0,
+            totalNots: localStorage.getItem('totalNots') || 0,
+            lastThree : []
         }
+
+        
     }
 
     async   componentDidMount(){
 
-        // set auto notif check from server live message every 2 secs
-        setInterval(async()=>{
-                try{
-                    if(this.state.slno){
-                     
-    
-                        const response3 = await  axios.get(`/getTotalNotiAmount/${this.state.slno}`,{
-                            headers : {
-                                'Content-Type' : 'application/json'
-                            }
-                        });
-                        if(response3.data.message == 'success'){
-                            localStorage.setItem('totalNots', response3.data.amount)
-                        }
         
-                    
-                }
-                }catch(err){
-                    console.log(err)
-                }
-                
-            
-        },2000)
+        // set auto notif check from server live message every 2 secs
+        this.intervalId = setInterval(() => {
+            const updatedTotalNots = localStorage.getItem('totalNots');
+            if (updatedTotalNots !== this.state.totalNots) {
+              this.setState({ totalNots: updatedTotalNots });
+             
+            }
 
-
+          }, 2000);
+        
+        
+          // check initially at start if u logged in
         if(localStorage.getItem('token')){
             try{
                 const response = await axios.get(`/amILogged/${localStorage.getItem('token')}`,{
@@ -98,21 +92,43 @@ export class Nav extends Component {
                     console.log(this.state)
                 }
 
+
+                // get total notifications about last time u logged out
                 if(this.state.slno){
                  
-
-                        const response3 = await axios.get(`/getTotalNotiAmount/${this.state.slno}`,{
-                            headers : {
-                                'Content-Type' : 'application/json'
+                        try{
+                            const res3 = await axios.get(`/getTotalNotiAmount/${this.state.slno}`,{
+                                headers : {
+                                    'Content-Type' : 'application/json'
+                                }
+                            });
+                            
+    
+                            const res4 = await axios.get(`/getLastThree/${this.state.slno}`,{
+                                headers : {
+                                    'Content-Type' : 'application/json'
+                                }
+                            });
+    
+                            const [response3, response4] = await Promise.all([res3,res4])
+    
+                            if(response3.data.message == 'success'){
+                                
+                                localStorage.setItem('totalNots', response3.data.amount)
+                               
                             }
-                        });
-                        if(response3.data.message == 'success'){
-                            this.setState({
-                                notiamount : response3.data.amount
-                            })
-                            localStorage.setItem('totalNots', response3.data.amount)
-                           
+                            if(response4.data.message == 'success'){
+                                
+                                this.setState({
+                                    lastThree : response4.data.lastguys
+                                })
+                               
+                               
+                            }
+                        }catch(err){
+                            console.log(err)
                         }
+                        
 
                     
                 }
@@ -124,19 +140,14 @@ export class Nav extends Component {
         }
     }
 
-    async componentDidUpdate(prevState){
-        setInterval(()=>{
-            if(prevState.notiamount != localStorage.getItem('totalNots')){
-                
-    
-                this.renderNotif()
-            }
-        },2000)
-        
-    }
+
+   
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
+      }
     
    
-
+      // circle loading anim
     loadingEffect = ()=>{
         return  <div className='container-fluid loader d-flex justify-content-center align-items-center'>
             <div className="spinner-border text-danger" style={{width: '3rem', height: '3rem'}} role="status">
@@ -147,8 +158,24 @@ export class Nav extends Component {
         </div>
     }
 
-    renderNotif = ()=>{
-        return  <div>{this.state.notiamount}</div>
+    
+
+    showLastThreeGuys = ()=>{
+        if(this.state.lastThree.length>0){
+            if(this.state.lastThree.length>3){
+                for(var i=0;i<3;i++){
+                    return  <div className='mb-2 anim'>
+                    <AccountCircleIcon fontSize='large'/>
+                    </div>
+                }
+            }else if(this.state.lastThree.length<3){
+                return  this.state.lastThree.map((each)=>{
+                    return  <div className='mb-2 anim'>
+                    <AccountCircleIcon fontSize='large'/>
+                    </div>
+                })
+            }
+        }
     }
 
   render() {
@@ -172,21 +199,8 @@ export class Nav extends Component {
                 </div>
                 
 
-                {this.state.token != '' ? <div className='mb-2 anim'>
-                <AccountCircleIcon fontSize='large'/>
-                </div> : null }
-                
-
-                {this.state.token !='' ? <div className='mb-2 anim'>
-                <AccountCircleIcon fontSize='large'/>
-                </div>:null}
-                
-
-
-                {this.state.token !='' ? <div className='mb-3 anim'>
-                <AccountCircleIcon fontSize='large'/>
-                </div>:null}
-                
+                {this.showLastThreeGuys()}
+               
 
                 <MoreVertIcon />
                 <MoreVertIcon />
@@ -200,7 +214,7 @@ export class Nav extends Component {
                 {this.state.token != '' ? 
                 <div className='mt-2 mb-1 anim'>
                     <Link className='verifyme' to='/myNotification'><NotificationsActiveIcon fontSize='large'/><span className="position-absolute top-0 start-100 translate-middle badge rounded-pill badgebg bg-danger">
-                    {this.state.notiamount}
+                    {this.state.totalNots}
                     
                   </span></Link>
                 </div>

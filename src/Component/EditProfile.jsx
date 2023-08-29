@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-
+import { io } from 'socket.io-client';
 
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -21,6 +21,7 @@ import WcIcon from '@mui/icons-material/Wc';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -29,6 +30,8 @@ import {
   } from "react-router-dom";
 import axios from 'axios';
 
+
+const socket = io('http://localhost:8000');
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -43,6 +46,10 @@ export class EditProfile extends Component {
             returnMessage : '',
             open : false
         }
+
+        socket.on('notification', (data)=>{
+            localStorage.setItem('totalNots',data)
+        })
     }
 
     dateConvert2 = (dateString)=>{
@@ -105,11 +112,16 @@ export class EditProfile extends Component {
                 })
             }
 
+            const { slno } = this.props;
+        
+            socket.emit('authenticate', slno);
             
 
         }catch(err){
             console.log(err)
         }
+
+
     }
 
     changeFullName = (id, name) => {

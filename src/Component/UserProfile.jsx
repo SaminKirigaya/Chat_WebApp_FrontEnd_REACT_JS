@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-
+import { io } from 'socket.io-client';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
@@ -26,12 +26,17 @@ import {
   } from "react-router-dom";
 import axios from 'axios';
 
+const socket = io('http://localhost:8000');
 export class UserProfile extends Component {
     constructor(props) {
         super(props);
         this.state = {
             userData : []
         }
+
+        socket.on('notification', (data)=>{
+            localStorage.setItem('totalNots',data)
+        })
     }
 
     dateConvert = (date)=>{
@@ -66,6 +71,10 @@ export class UserProfile extends Component {
         }catch(err){
             console.log(err)
         }
+
+        const { slno } = this.props;
+        
+        socket.emit('authenticate', slno);
     }
   render() {
     return (

@@ -11,6 +11,11 @@ import {
 
 
 export class ForgotPass extends Component {
+  constructor(props) {
+    super(props);
+    
+  }
+ 
   render() {
     return (
         <Fragment>

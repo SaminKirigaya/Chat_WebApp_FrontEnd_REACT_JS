@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { io } from 'socket.io-client';
 
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -30,7 +31,7 @@ import {
 import axios from 'axios';
 
 
-
+const socket = io('http://localhost:8000');
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
@@ -45,6 +46,10 @@ export class FriendReqAll extends Component {
             open: false,
             returnMessage : ''
         }
+
+        socket.on('notification', (data)=>{
+            localStorage.setItem('totalNots',data)
+        })
     }
 
     acceptFriend = async(e, idno)=>{
@@ -155,6 +160,8 @@ export class FriendReqAll extends Component {
             console.log(err)
         }
         
+        
+        socket.emit('authenticate', slno);
 
     }
 

@@ -2768,3 +2768,7 @@ display: none;
 .texdes{
     color: #e80070;
 }
+
+.getBig{
+    transform: scale(1.3);
+}

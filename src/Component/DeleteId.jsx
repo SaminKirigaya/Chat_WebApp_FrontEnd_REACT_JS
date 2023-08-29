@@ -3,10 +3,12 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
+import { io } from 'socket.io-client';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
 import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 import {
@@ -18,6 +20,7 @@ import {
 import axios from 'axios';
 
 
+const socket = io('http://localhost:8000');
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -30,6 +33,17 @@ export class DeleteId extends Component {
       returnMessage : '',
       open : false
     }
+
+    socket.on('notification', (data)=>{
+      localStorage.setItem('totalNots',data)
+  })
+
+  }
+
+  async componentDidMount(){
+    const { slno } = this.props;
+      
+      socket.emit('authenticate', slno);
   }
 
   handleClick = () => {

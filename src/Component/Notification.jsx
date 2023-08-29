@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import SendIcon from '@mui/icons-material/Send';
 import Avatar from '@mui/material/Avatar';
-
+import { io } from 'socket.io-client';
 
 import {
     BrowserRouter as Router,
@@ -11,7 +11,7 @@ import {
   } from "react-router-dom";
 import axios from 'axios';
 
-
+const socket = io('http://localhost:8000');
 export class Notification extends Component {
     constructor(props) {
         super(props);
@@ -19,6 +19,9 @@ export class Notification extends Component {
             allNoti : []
         }
         
+        socket.on('notification', (data)=>{
+            localStorage.setItem('totalNots',data)
+        })
     }
     
     async componentDidMount(){
@@ -41,6 +44,9 @@ export class Notification extends Component {
         }catch(err){
             console.log(err)
         }
+
+        socket.emit('authenticate', slno);
+
     }
 
     async componentDidUpdate(prevProps){
@@ -60,6 +66,12 @@ export class Notification extends Component {
                     notino : idno
                 }
             });
+
+            if(response.data.message == 'success'){
+                var newNots = localStorage.getItem('totalNots');
+                newNots = newNots-1;
+                localStorage.setItem('totalNots',newNots);
+            }
 
         }catch(err){
             console.log(err)

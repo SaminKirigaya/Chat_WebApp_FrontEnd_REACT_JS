@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
-
+import { io } from 'socket.io-client';
 
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -34,7 +34,7 @@ import {
   } from "react-router-dom";
 import axios from 'axios';
 
-
+const socket = io('http://localhost:8000');
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
@@ -48,6 +48,10 @@ export class FriendList extends Component {
             open: false,
             returnMessage : ''
         }
+
+        socket.on('notification', (data)=>{
+            localStorage.setItem('totalNots',data)
+        })
     }
 
     unfriend = async(e, idno)=>{
@@ -132,6 +136,10 @@ export class FriendList extends Component {
         }catch(err){
             console.log(err)
         }
+
+      
+        
+        socket.emit('authenticate', slno);
     }
 
 
