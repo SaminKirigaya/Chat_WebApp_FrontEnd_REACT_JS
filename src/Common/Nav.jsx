@@ -8,10 +8,12 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import Groups2Icon from '@mui/icons-material/Groups2';
 
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
+import BuildIcon from '@mui/icons-material/Build';
 import Cookies from 'js-cookie';
 
 import {
@@ -24,22 +26,22 @@ import {
 import axios from 'axios';
 
 
-  const Login = React.lazy(()=>import('../Component/Login'));
-  const Reg = React.lazy(()=>import('../Component/Reg'));
-  const ForgotPass = React.lazy(()=>import('../Component/ForgotPass'));
-  const VerifyMe = React.lazy(()=>import('../Component/VerifyMe'));
-  const UserProfile = React.lazy(()=>import('../Component/UserProfile'));
-  const EditProfile = React.lazy(()=>import('../Component/EditProfile'));
-  const Logout = React.lazy(()=>import('../Component/Logout'));
-  const DeleteId = React.lazy(()=>import('../Component/DeleteId'));
-  const ChangeEmote = React.lazy(()=>import('../Component/ChangeEmote'));
-  const FriendList = React.lazy(()=>import('../Component/FriendList'));
-  const SearchResult = React.lazy(()=>import('../Component/SearchResult'));
-  const FriendReqAll = React.lazy(()=>import('../Component/FriendReqAll'));
-  const Messaging = React.lazy(()=>import('../Component/Messaging'));
-  const Notification = React.lazy(()=>import('../Component/Notification'));
-
-
+const Login = React.lazy(()=>import('../Component/Login'));
+const Reg = React.lazy(()=>import('../Component/Reg'));
+const ForgotPass = React.lazy(()=>import('../Component/ForgotPass'));
+const VerifyMe = React.lazy(()=>import('../Component/VerifyMe'));
+const UserProfile = React.lazy(()=>import('../Component/UserProfile'));
+const EditProfile = React.lazy(()=>import('../Component/EditProfile'));
+const Logout = React.lazy(()=>import('../Component/Logout'));
+const DeleteId = React.lazy(()=>import('../Component/DeleteId'));
+const ChangeEmote = React.lazy(()=>import('../Component/ChangeEmote'));
+const FriendList = React.lazy(()=>import('../Component/FriendList'));
+const SearchResult = React.lazy(()=>import('../Component/SearchResult'));
+const FriendReqAll = React.lazy(()=>import('../Component/FriendReqAll'));
+const Messaging = React.lazy(()=>import('../Component/Messaging'));
+const Notification = React.lazy(()=>import('../Component/Notification'));
+const CreateGroup = React.lazy(()=>import('../Component/CreateGroup'));
+const AllMyGroups = React.lazy(()=>import('../Component/AllMyGroups'));
 
 export class Nav extends Component {
     constructor(props) {
@@ -292,6 +294,23 @@ export class Nav extends Component {
                 : null
                 }
                 
+
+                {
+                    this.state.token != '' ? 
+                <div className='mb-2 mt-1 anim'>
+                    <Link className='verifyme' to='/createGroup'><Groups2Icon fontSize='large'/></Link>
+                </div>
+                : null
+                }
+                
+                {
+                    this.state.token != '' ? 
+                <div className='mb-2 mt-1 anim'>
+                    <Link className='verifyme' to='/allMyGroups'><BuildIcon fontSize='large'/></Link>
+                </div>
+                : null
+                }
+                
                 {this.state.token != '' ?  <div className='mb-2 mt-1 anim'>
                 <Link className='verifyme' to='/logout'><LogoutIcon fontSize='large' /></Link>
                 </div> : null}
@@ -320,7 +339,8 @@ export class Nav extends Component {
                     <Route exact path='/friendReqAll' component={()=>(<FriendReqAll element={8} slno={this.state.slno} />)} />
                     <Route exact path='/message/:friendId' component={(props)=>(<Messaging element={9} userId={this.state.slno} image={this.state.image} token={this.state.token} {...props}/>)} />
                     <Route exact path='/myNotification' component={()=>(<Notification element={10} slno={this.state.slno} />)} />
-
+                    <Route exact path='/createGroup' component={()=>(<CreateGroup element={11} slno={this.state.slno} image={this.state.image}/>)} />
+                    <Route exact path='/allMyGroups' component={()=>(<AllMyGroups element={11} slno={this.state.slno} image={this.state.image}/>)} />
 
                     </Switch>
             </Suspense>
