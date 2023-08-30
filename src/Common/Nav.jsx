@@ -12,10 +12,11 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
-
+import Cookies from 'js-cookie';
 
 import {
     BrowserRouter as Router,
+    withRouter,
     Switch,
     Route,
     Link
@@ -49,7 +50,13 @@ export class Nav extends Component {
             slno : '',
             notiamount : 0,
             totalNots: localStorage.getItem('totalNots') || 0,
-            lastThree : []
+            lastThree : [],
+            user0recverId : '',
+            user0avatar : '',
+            user1recverId : '',
+            user1avatar :'',
+            user2recverId :'',
+            user2avatar:''
         }
 
         
@@ -57,14 +64,43 @@ export class Nav extends Component {
 
     async   componentDidMount(){
 
-        
-        // set auto notif check from server live message every 2 secs
+        // set auto notif check from server live message every 2 secs nothing will change if no new data is there or amount is changed
         this.intervalId = setInterval(() => {
             const updatedTotalNots = localStorage.getItem('totalNots');
             if (updatedTotalNots !== this.state.totalNots) {
               this.setState({ totalNots: updatedTotalNots });
-             
+        
             }
+
+            if(localStorage.getItem('user0avatar') && localStorage.getItem('user0recverId')){
+                if (localStorage.getItem('user0recverId') !== this.state.user0recverId) {
+                    this.setState({ 
+                        user0recverId : localStorage.getItem('user0recverId'),
+                        user0avatar : localStorage.getItem('user0avatar')
+                    });
+                   
+                  }
+            }
+            
+            if (localStorage.getItem('user1avatar') && localStorage.getItem('user1recverId')) {
+                if (localStorage.getItem('user1recverId') !== this.state.user1recverId) {
+                this.setState({ 
+                    user1recverId : localStorage.getItem('user1recverId'),
+                    user1avatar : localStorage.getItem('user1avatar')
+                });
+            }
+            }
+            
+            
+            if (localStorage.getItem('user2avatar') && localStorage.getItem('user2recverId')){
+                if (localStorage.getItem('user2recverId') !== this.state.user2recverId) {
+                this.setState({ 
+                    user2recverId : localStorage.getItem('user2recverId'),
+                    user2avatar : localStorage.getItem('user2avatar')
+                });
+            }
+            }
+        
 
           }, 2000);
         
@@ -80,7 +116,7 @@ export class Nav extends Component {
 
                 if(response.status == 200){
                     if(response.data.message == 'You are logged in.'){
-                        await this.setState({
+                         this.setState({
                             token : localStorage.getItem('token'),
                             image : localStorage.getItem('image'),
                             slno : localStorage.getItem('slno')
@@ -122,6 +158,8 @@ export class Nav extends Component {
                                 this.setState({
                                     lastThree : response4.data.lastguys
                                 })
+
+                                console.log(this.state)
                                
                                
                             }
@@ -140,10 +178,11 @@ export class Nav extends Component {
         }
     }
 
-
+   
    
     componentWillUnmount() {
         clearInterval(this.intervalId);
+        
       }
     
    
@@ -158,24 +197,39 @@ export class Nav extends Component {
         </div>
     }
 
-    
+    // initially at loading show last three guys we messaged ...
 
     showLastThreeGuys = ()=>{
         if(this.state.lastThree.length>0){
             if(this.state.lastThree.length>3){
                 for(var i=0;i<3;i++){
                     return  <div className='mb-2 anim'>
-                    <AccountCircleIcon fontSize='large'/>
+                    <Link to={'/message/'+this.state.lastThree[i].recverId}><Avatar fontSize="small" alt="Remy Sharp" src={this.state.lastThree[i].recvAvatar} /></Link>
                     </div>
                 }
             }else if(this.state.lastThree.length<3){
                 return  this.state.lastThree.map((each)=>{
                     return  <div className='mb-2 anim'>
-                    <AccountCircleIcon fontSize='large'/>
+                    <Link to={'/message/'+each.recverId}><Avatar fontSize="small" alt="Remy Sharp" src={each.recvAvatar} /></Link>
                     </div>
                 })
             }
         }
+    }
+
+    localLastThree = ()=>{
+        return  <div><div className='mb-2 anim'>
+        <Link to={'/message/'+localStorage.getItem('user0recverId')}><Avatar fontSize="small" alt="Remy Sharp" src={localStorage.getItem('user0avatar')} /></Link>
+        </div>  
+        {localStorage.getItem('user1recverId') && localStorage.getItem('user1avatar') ? <div className='mb-2 anim'>
+        <Link to={'/message/'+localStorage.getItem('user1recverId')}><Avatar fontSize="small" alt="Remy Sharp" src={localStorage.getItem('user1avatar')} /></Link>
+        </div> : null}
+
+        {localStorage.getItem('user2recverId') && localStorage.getItem('user2avatar') ? <div className='mb-2 anim'>
+        <Link to={'/message/'+localStorage.getItem('user2recverId')}><Avatar fontSize="small" alt="Remy Sharp" src={localStorage.getItem('user2avatar')} /></Link>
+        </div> : null}
+        
+        </div>
     }
 
   render() {
@@ -198,9 +252,8 @@ export class Nav extends Component {
                   </Stack>}
                 </div>
                 
-
-                {this.showLastThreeGuys()}
-               
+                {localStorage.getItem('user0recverId') && localStorage.getItem('user0avatar') ? this.localLastThree() : this.showLastThreeGuys()}
+                
 
                 <MoreVertIcon />
                 <MoreVertIcon />
@@ -260,8 +313,8 @@ export class Nav extends Component {
                     <Route exact path='/userProfile' component={()=>(<UserProfile element={1} image={this.state.image} slno={this.state.slno}/>)} />
                     <Route exact path='/editProfile/:userslno' component={(props)=>(<EditProfile element={2} image={this.state.image} slno={this.state.slno} {...props}/>)} />
                     <Route exact path='/logout' component={(props)=>(<Logout element={3} userslno={this.state.slno} image={this.state.image} {...props}/>)} />
-                    <Route exact path='/deleteID/:slno' component={(props)=>(<DeleteId element={4} image={this.state.image} {...props}/>)} /> 
-                    <Route exact path='/changeEmote/:slno' component={(props)=>(<ChangeEmote element={5} {...props}/>)} />
+                    <Route exact path='/deleteID/:slno' component={(props)=>(<DeleteId element={4} userId={this.state.slno} image={this.state.image} {...props}/>)} /> 
+                    <Route exact path='/changeEmote/:slno' component={(props)=>(<ChangeEmote element={5} userId={this.state.slno} {...props}/>)} />
                     <Route exact path='/friendList' component={()=>(<FriendList element={6} slno={this.state.slno}/>)} />
                     <Route exact path='/searchresult/:searchData' component={(props)=>(<SearchResult element={7} slno={this.state.slno} {...props}/>)} />
                     <Route exact path='/friendReqAll' component={()=>(<FriendReqAll element={8} slno={this.state.slno} />)} />

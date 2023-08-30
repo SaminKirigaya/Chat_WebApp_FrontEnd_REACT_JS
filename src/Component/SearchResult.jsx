@@ -75,6 +75,15 @@ export class SearchResult extends Component {
                 
             }
             
+            if(this.props.element != 9){
+           
+                    const res = await axios.get(`/setmeoutmsgbox/${slno}`,{
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    })
+               
+            }
 
 
         }catch(err){
@@ -89,11 +98,16 @@ export class SearchResult extends Component {
         
     async componentDidUpdate(prevProps){                    
         const {searchData} = this.props.match.params;
-        if(prevProps.match.params.searchData != searchData){
+        if(prevProps.match.params.searchData != searchData || this.props.element != prevProps.element){
             
             this.componentDidMount()
         }
+ 
+            // send that user left message box
+          
+           
     }
+
 
     showAllSearch = ()=>{
         if(this.state.personData){

@@ -16,6 +16,7 @@ export class ForgotPass extends Component {
     
   }
  
+  
   render() {
     return (
         <Fragment>

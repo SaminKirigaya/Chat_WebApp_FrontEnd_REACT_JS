@@ -113,7 +113,17 @@ export class EditProfile extends Component {
             }
 
             const { slno } = this.props;
-        
+            if(this.props.element != 9){
+                try{
+                    const res = await axios.get(`/setmeoutmsgbox/${slno}`,{
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    })
+                }catch(err){
+                    console.log(err)
+                }
+            }
             socket.emit('authenticate', slno);
             
 
@@ -123,6 +133,14 @@ export class EditProfile extends Component {
 
 
     }
+
+    async componentDidUpdate(prevProps){
+        // send that user left message box
+       
+        if(this.props.element != prevProps.element){
+          this.componentDidMount()
+      }
+      }
 
     changeFullName = (id, name) => {
         this.setState(prevState => ({

@@ -154,6 +154,15 @@ export class FriendReqAll extends Component {
                 console.log(this.state.requestData)
             }
             
+            if(this.props.element != 9){
+               
+                    const res = await axios.get(`/setmeoutmsgbox/${slno}`,{
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    })
+                
+            }
 
 
         }catch(err){
@@ -164,6 +173,15 @@ export class FriendReqAll extends Component {
         socket.emit('authenticate', slno);
 
     }
+
+
+    async componentDidUpdate(prevProps){
+        // send that user left message box
+        
+        if(this.props.element != prevProps.element){
+          this.componentDidMount()
+      }
+      }
 
     
     render() {

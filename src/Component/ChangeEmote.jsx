@@ -44,9 +44,29 @@ export class ChangeEmote extends Component {
 
 
       const { slno } = this.props;
+      const { userId } = this.props;
+      try{
+        if(this.props.element != 9){
+          const res = await axios.get(`/setmeoutmsgbox/${userId}`,{
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+        })
+        }
+      }catch(err){console.log(err)}
         
-        socket.emit('authenticate', slno);
+        socket.emit('authenticate', userId);
     }
+
+    async componentDidUpdate(prevProps){
+      // send that user left message box
+      
+      if(this.props.element != prevProps.element){
+        
+            this.componentDidMount()
+        }
+    }
+    
     
     changeIt = (name, idname)=>{
       this.setState({

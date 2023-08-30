@@ -41,6 +41,16 @@ export class Notification extends Component {
                 console.log(this.state.allNoti)
             }
 
+            if(this.props.element != 9){
+            
+                    const res = await axios.get(`/setmeoutmsgbox/${slno}`,{
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    })
+               
+            }
+
         }catch(err){
             console.log(err)
         }
@@ -50,10 +60,15 @@ export class Notification extends Component {
     }
 
     async componentDidUpdate(prevProps){
-        if(this.props.element != prevProps.element){
+
+        if(this.props.element != prevProps.element || this.props.element != prevProps.element){
             this.componentDidMount();
         }
-    }
+
+            // send that user left message box
+            
+        }
+    
 
     delThis = async(e, idno)=>{
         const {slno} = this.props;
@@ -67,11 +82,13 @@ export class Notification extends Component {
                 }
             });
 
-            if(response.data.message == 'success'){
+           
                 var newNots = localStorage.getItem('totalNots');
+                if(newNots>0){
                 newNots = newNots-1;
+                }
                 localStorage.setItem('totalNots',newNots);
-            }
+            
 
         }catch(err){
             console.log(err)

@@ -132,6 +132,18 @@ export class FriendList extends Component {
                 
             }
 
+            if(this.props.element != 9){
+               
+                    const res = await axios.get(`/setmeoutmsgbox/${slno}`,{
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    })
+               
+            }
+
+
+
 
         }catch(err){
             console.log(err)
@@ -142,6 +154,14 @@ export class FriendList extends Component {
         socket.emit('authenticate', slno);
     }
 
+
+    async componentDidUpdate(prevProps){
+        // send that user left message box
+     
+        if(this.props.element != prevProps.element){
+          this.componentDidMount()
+      }
+      }
 
     handleClick = () => {
         this.setState({open : true})

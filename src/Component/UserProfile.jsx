@@ -54,6 +54,7 @@ export class UserProfile extends Component {
     }
     
     async componentDidMount(){
+        
         try{
             const response = await axios.get(`/getMyIdData/${this.props.slno}`,{
                 headers : {
@@ -74,8 +75,29 @@ export class UserProfile extends Component {
 
         const { slno } = this.props;
         
+        if(this.props.element != 9){
+            try{
+                const res = await axios.get(`/setmeoutmsgbox/${slno}`,{
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+            }catch(err){
+                console.log(err)
+            }
+        }
         socket.emit('authenticate', slno);
     }
+
+
+    async componentDidUpdate(prevProps){
+        // send that user left message box
+       
+        if(this.props.element != prevProps.element){
+          this.componentDidMount()
+      }
+      }
+
   render() {
     return (
         <Fragment>

@@ -9,7 +9,10 @@ import Stack from '@mui/material/Stack';
 import { io } from 'socket.io-client';
 import axios from 'axios';
 
+import Cookies from 'js-cookie';
+
 const socket = io('http://localhost:8000');
+
 
 
 function getCurrentDateTime() {
@@ -65,7 +68,22 @@ export class Messaging extends Component {
         })
 
         socket.on('navThreeLastUsers', (data)=>{
-            console.log(data)
+           
+            var stingify = JSON.stringify(data)
+            if(data.length>3){
+                data.map((each,index)=>{
+                    if(index<3){
+                        localStorage.setItem(`user${index}avatar`,each.recvAvatar)
+                        localStorage.setItem(`user${index}recverId`,each.recverId)
+                    }
+                })
+            }else{
+                data.map((each,index)=>{
+                    localStorage.setItem(`user${index}avatar`,each.recvAvatar)
+                    localStorage.setItem(`user${index}recverId`,each.recverId)
+                })
+            }
+            
         })
           
 
@@ -105,6 +123,15 @@ export class Messaging extends Component {
                 })
                 
             }
+            const { userId } = this.props;
+
+            if(this.props.element == 9){
+            const res = await axios.get(`/setmeinmsgbox/${userId}`,{
+                headers : {
+                    'Content-Type' : 'application/json'
+                }
+            })
+        }
 
         }catch(err){
             console.log(err)
@@ -118,12 +145,17 @@ export class Messaging extends Component {
         socket.emit('authenticate', userId);
         
     }
+    
 
     async componentDidUpdate(prevProps){
+        const { userId } = this.props;
         var {friendId} = this.props.match.params;
-        if(friendId != prevProps.match.params.friendId){
+        if(friendId != prevProps.match.params.friendId || this.props.element != prevProps.element){
             this.componentDidMount();
         }
+
+        // send that user entered message box
+        
     }
 
  
@@ -186,6 +218,8 @@ export class Messaging extends Component {
             disabled : false
 
           }));
+
+         
         }
       };
 
