@@ -85,6 +85,34 @@ export class AllGroupIChat extends Component {
     this.setState({open : false})
     };
 
+    leaveThisGroup = async (e, groupName)=>{
+        try{    
+            const res= await axios({
+                url: `/leaveThisGroup/${this.props.slno}`,
+                method : 'post',
+                data : {
+                    groupname : groupName
+                }
+            })
+
+            if(res.data.message == 'Successfully Left This Group ...'){
+
+                this.setState({
+                    left : true
+                })
+
+            }else{
+                this.setState({
+                    returnMessage : res.data.message,
+                    open : true
+                  })
+            }
+
+        }catch(err){
+            console.log(err)
+        }
+    }
+
 
     showgroups = ()=>{
         if(this.state.allgroups.length>0){
@@ -94,7 +122,7 @@ export class AllGroupIChat extends Component {
                 <td className='purpose'>{each.purpose}</td>
                 <td>{each.country}</td>
                 <td>{formatDate(each.createdAt)}</td>
-                <td className='btnalgn'><Link to='#' type="button" className="btn btn-sm btn-danger tspn me-3"><SendIcon /></Link> <button onClick={(e)=>{this.leaveThisGroup(e,each._id)}} type="button" className="btn btn-sm btn-danger tspn"><MeetingRoomIcon /></button></td>
+                <td className='btnalgn'><Link to='#' type="button" className="btn btn-sm btn-danger tspn me-3"><SendIcon /></Link> <button onClick={(e)=>{this.leaveThisGroup(e,each.groupname)}} type="button" className="btn btn-sm btn-danger tspn"><MeetingRoomIcon /></button></td>
               
                 </tr>
 
@@ -128,6 +156,7 @@ export class AllGroupIChat extends Component {
                     allgroups : res.data.mygroups
                 })
             }
+
         }catch(err){
             console.log(err)
         }
