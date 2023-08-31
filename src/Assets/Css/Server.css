@@ -1,4 +1,50 @@
 @media (min-width:350px) and (max-width:374px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50% !important;
+        left: 57% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 254px !important;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .btnalgn{
+        display: flex;
+    }
+    .allmygroups{
+        display: flex;
+        align-items: start;
+        width: 88%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .msgimgbox{
         width: 40vw !important;
         height:20vw !important;
@@ -203,6 +249,51 @@
 }
 
 @media (min-width:375px) and (max-width:389px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 55% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 291px !important;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+    .btnalgn{
+        display: flex;
+    }
+    .allmygroups{
+        display: flex;
+        align-items: start;
+        width: 88%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2rem;
@@ -397,6 +488,52 @@
 
 
 @media (min-width:390px) and (max-width:411px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 55% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 291px !important;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .btnalgn{
+        display: flex;
+    }
+    .allmygroups{
+        display: flex;
+        align-items: start;
+        width: 88%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2rem;
@@ -594,6 +731,52 @@
 
 
 @media (min-width:412px) and (max-width:539px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 55% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 291px !important;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .btnalgn{
+        display: flex;
+    }
+    .allmygroups{
+        display: flex;
+        align-items: start;
+        width: 88%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2rem;
@@ -788,6 +971,50 @@
 }
 
 @media (min-width:540px) and (max-width:767px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 53% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 359px !important;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+    .btnalgn{
+        display: flex;
+    }
+    .allmygroups{
+        display: flex;
+        align-items: start;
+        width: 88%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2rem;
@@ -992,6 +1219,52 @@
 
 
 @media (min-width:768px) and (max-width:819px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 55% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 496px !important;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .btnalgn{
+        display: flex;
+    }
+    .allmygroups{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2rem;
@@ -1187,6 +1460,52 @@
 }
 
 @media (min-width:820px) and (max-width:911px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 55% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 496px !important;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .btnalgn{
+        display: flex;
+    }
+    .allmygroups{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2rem;
@@ -1385,6 +1704,52 @@
 
 
 @media (min-width:912px) and (max-width:1023px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 55% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 496px !important;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .btnalgn{
+        display: flex;
+    }
+    .allmygroups{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2rem;
@@ -1581,6 +1946,49 @@
 
 
 @media (min-width:1024px) and (max-width:1279px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .allmygroups{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2rem;
@@ -1771,6 +2179,47 @@
 
 
 @media (min-width:1280px) and (max-width:1365px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .allmygroups{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2.5rem;
@@ -1967,6 +2416,48 @@
 
 
 @media (min-width:1366px) and (max-width:1919px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+
+    .allmygroups{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2.5rem;
@@ -2152,6 +2643,47 @@
 
 
 @media (min-width:1920px) and (max-width:3839px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .allmygroups{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2.5rem;
@@ -2389,6 +2921,47 @@
 
 
 @media (min-width:3840px) and (max-width:7999px){
+    .css-1wnsr1i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background-color: #ffd2e8 !important;
+        color :#e80070;
+        border: 2px solid #e80070 !important;
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+        padding: 32px;
+        border-radius: 1rem;
+        max-height: 70vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .css-1wnsr1i::-webkit-scrollbar {
+    display: none;
+    }
+
+
+    .allmygroups{
+        display: flex;
+        align-items: center;
+        width: 70%;
+        min-height : 100vh;
+      
+        overflow-y: auto;
+         
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .allmygroups::-webkit-scrollbar {
+    display: none;
+    }
     .cgstyle{
         color: #e80070;
         font-size: 2.5rem;
@@ -2911,13 +3484,7 @@ display: none;
     transform: scale(1.2) !important;
 }
 
-.allmygroups{
-    width: 70%;
-    min-height : 100vh;
-  
-    overflow-y: auto;
-     
-}
+
 
 .tabledes{
     background-color: #ffdbed;
@@ -2929,17 +3496,7 @@ display: none;
     color : #dd3d8a;
 }
 
-.allmygroups::-webkit-scrollbar {
-    width: 5px !important;
-    
-  }
 
-.allmygroups::-webkit-scrollbar-thumb {
-	background-color: #dd3d8a;
-    border-radius: 1rem;
-   
-
-}  
 
 .purpose{
     max-width: 19vw !important;
@@ -2977,4 +3534,13 @@ display: none;
     background-color: transparent;
     border: none;
     color:#e80070
+}
+
+
+.brdbtm{
+    border-bottom: 0.1rem solid #ff7dbc;
+}
+
+.opct{
+    opacity: 0.5;
 }

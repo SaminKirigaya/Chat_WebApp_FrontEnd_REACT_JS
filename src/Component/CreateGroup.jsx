@@ -137,6 +137,8 @@ export class CreateGroup extends Component {
 
         </div>
 
+        
+
         <Snackbar
         open={this.state.open}
         autoHideDuration={4000}
