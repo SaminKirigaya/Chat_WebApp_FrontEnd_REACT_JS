@@ -9,6 +9,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import Groups2Icon from '@mui/icons-material/Groups2';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -42,6 +43,8 @@ const Messaging = React.lazy(()=>import('../Component/Messaging'));
 const Notification = React.lazy(()=>import('../Component/Notification'));
 const CreateGroup = React.lazy(()=>import('../Component/CreateGroup'));
 const AllMyGroups = React.lazy(()=>import('../Component/AllMyGroups'));
+const AllGroupIChat = React.lazy(()=>import('../Component/AllGroupIChat'));
+
 
 export class Nav extends Component {
     constructor(props) {
@@ -310,6 +313,18 @@ export class Nav extends Component {
                 </div>
                 : null
                 }
+
+
+
+                {
+                    this.state.token != '' ? 
+                <div className='mb-2 mt-1 anim'>
+                    <Link className='verifyme' to='/allGroupsIchat'><ConnectWithoutContactIcon fontSize='large'/></Link>
+                </div>
+                : null
+                }
+
+
                 
                 {this.state.token != '' ?  <div className='mb-2 mt-1 anim'>
                 <Link className='verifyme' to='/logout'><LogoutIcon fontSize='large' /></Link>
@@ -340,9 +355,10 @@ export class Nav extends Component {
                     <Route exact path='/message/:friendId' component={(props)=>(<Messaging element={9} userId={this.state.slno} image={this.state.image} token={this.state.token} {...props}/>)} />
                     <Route exact path='/myNotification' component={()=>(<Notification element={10} slno={this.state.slno} />)} />
                     <Route exact path='/createGroup' component={()=>(<CreateGroup element={11} slno={this.state.slno} image={this.state.image}/>)} />
-                    <Route exact path='/allMyGroups' component={()=>(<AllMyGroups element={11} slno={this.state.slno} image={this.state.image}/>)} />
+                    <Route exact path='/allMyGroups' component={()=>(<AllMyGroups element={12} slno={this.state.slno} image={this.state.image}/>)} />
+                    <Route exact path='/allGroupsIchat' component={()=>(<AllGroupIChat element={13} slno={this.state.slno} image={this.state.image}/>)} />
 
-                    </Switch>
+                </Switch>
             </Suspense>
 
             </div>

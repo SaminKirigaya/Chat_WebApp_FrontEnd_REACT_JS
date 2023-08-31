@@ -61,6 +61,7 @@ const style = {
     boxShadow: 24,
     p: 4,
   };
+  
 export class AllMyGroups extends Component {
     constructor(props) {
         super(props);
@@ -239,7 +240,7 @@ export class AllMyGroups extends Component {
             })
         }else{
             return  <Typography id="modal-modal-description" sx={{ mt: 2, textAlign: 'center' }}>
-            Sad You Got No Friends ....
+            Sad You Got No Friends To Add Anymore ....
         </Typography>  
         }
       }
