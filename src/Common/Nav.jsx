@@ -44,7 +44,7 @@ const Notification = React.lazy(()=>import('../Component/Notification'));
 const CreateGroup = React.lazy(()=>import('../Component/CreateGroup'));
 const AllMyGroups = React.lazy(()=>import('../Component/AllMyGroups'));
 const AllGroupIChat = React.lazy(()=>import('../Component/AllGroupIChat'));
-
+const GroupChat = React.lazy(()=>import('../Component/GroupChat'));
 
 export class Nav extends Component {
     constructor(props) {
@@ -250,7 +250,7 @@ export class Nav extends Component {
                     
                 </div>
 
-                <div className='mb-2 anim'>
+                <div className='mb-2 anim specialava'>
                     {this.state.token == '' ? <Link className='verifyme' to='/login'><AccountCircleIcon fontSize='large'/></Link> : <Stack direction="row" spacing={2}>
                         <Link to='/userProfile'><Avatar alt="Remy Sharp" src={this.state.image} /></Link>
                     
@@ -357,6 +357,7 @@ export class Nav extends Component {
                     <Route exact path='/createGroup' component={()=>(<CreateGroup element={11} slno={this.state.slno} image={this.state.image}/>)} />
                     <Route exact path='/allMyGroups' component={()=>(<AllMyGroups element={12} slno={this.state.slno} image={this.state.image}/>)} />
                     <Route exact path='/allGroupsIchat' component={()=>(<AllGroupIChat element={13} slno={this.state.slno} image={this.state.image}/>)} />
+                    <Route exact path='/groupChat/:groupname' component={(props)=>(<GroupChat element={14} userId={this.state.slno} image={this.state.image} token={this.state.token} {...props}/>)} />
 
                 </Switch>
             </Suspense>

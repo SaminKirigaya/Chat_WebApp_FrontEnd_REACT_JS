@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
+import { Fragment } from 'react'
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import SendIcon from '@mui/icons-material/Send';
 import Avatar from '@mui/material/Avatar';
@@ -9,12 +10,11 @@ import Stack from '@mui/material/Stack';
 import { io } from 'socket.io-client';
 import axios from 'axios';
 
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-
 import Cookies from 'js-cookie';
 
-const socket = io('http://localhost:8000');
 
+
+const socket = io('http://localhost:8000');
 
 
 function getCurrentDateTime() {
@@ -42,7 +42,10 @@ function getCurrentDateTime() {
     };
     return now.toLocaleString('en-US', options);
   }
-export class Messaging extends Component {
+
+
+
+export class GroupChat extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -54,49 +57,27 @@ export class Messaging extends Component {
             disabled : false,
             username : ''
         }
-        this.cardContainerRef = React.createRef();
 
-        const userId = this.props.userId;
-        const {friendId} = this.props.match.params;
-        
-        socket.on('privateMessage', (message) => {
+        socket.on(`${this.props.match.params.groupname}`, (message) => {
+            if(message[0].sentBy != this.props.userId){
             this.setState((prevState) => ({
-              allmessages: [...prevState.allmessages, { text: message,  sender: this.props.match.params.friendId }],
+              allmessages: [...prevState.allmessages, { text: message,  sender: this.props.match.params.groupname }],
             }));
+        }
           });
 
-        socket.on('notification', (data)=>{
-            localStorage.setItem('totalNots',data)
-        })
-
-        socket.on('navThreeLastUsers', (data)=>{
-           
-            var stingify = JSON.stringify(data)
-            if(data.length>3){
-                data.map((each,index)=>{
-                    if(index<3){
-                        localStorage.setItem(`user${index}avatar`,each.recvAvatar)
-                        localStorage.setItem(`user${index}recverId`,each.recverId)
-                    }
-                })
-            }else{
-                data.map((each,index)=>{
-                    localStorage.setItem(`user${index}avatar`,each.recvAvatar)
-                    localStorage.setItem(`user${index}recverId`,each.recverId)
-                })
-            }
-            
-        })
-          
-
-
     }
-    
+
+
+
+
+
     async componentDidMount(){
         const myusersl = this.props.userId;
         
         
-        var {friendId} = this.props.match.params;
+        var {groupname} = this.props.match.params;
+        console.log(groupname)
         try{
             const response = await axios.get(`/getmyusername/${myusersl}`,{
                 headers : {
@@ -112,10 +93,10 @@ export class Messaging extends Component {
             }
 
             const response2 = await axios({
-                url : `/getmyoldconv/${myusersl}`,
+                url : `/getmyoldGroupconv/${myusersl}`,
                 method : 'post',
                 data: {
-                    thisFriend : friendId
+                    Group : groupname
                 }
             })
 
@@ -125,14 +106,17 @@ export class Messaging extends Component {
                 })
                 
             }
+            
             const { userId } = this.props;
 
-            if(this.props.element == 9){
-            const res = await axios.get(`/setmeinmsgbox/${userId}`,{
-                headers : {
-                    'Content-Type' : 'application/json'
-                }
-            })
+            if(this.props.element != 9){
+            
+                const res = await axios.get(`/setmeoutmsgbox/${userId}`,{
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+           
         }
 
         }catch(err){
@@ -151,54 +135,46 @@ export class Messaging extends Component {
 
     async componentDidUpdate(prevProps){
         const { userId } = this.props;
-        var {friendId} = this.props.match.params;
-        if(friendId != prevProps.match.params.friendId || this.props.element != prevProps.element){
+        var {groupname} = this.props.match.params;
+        if(groupname != prevProps.match.params.groupname || this.props.element != prevProps.element){
             this.componentDidMount();
         }
 
         // send that user entered message box
-        
     }
 
- 
 
     setImage= (e, file, filename)=>{
-            if(file && filename){
-                this.setState({
-                    image : file,
-                    message : '',
-                    placeval : filename,
-                    disabled : true
-                })
-            }else{
-                this.setState({
-                    image : null,
-                    message : '',
-                    placeval : 'Insert Message ...',
-                    disabled : false
-                })
-            }
-            
-            
+        if(file && filename){
+            this.setState({
+                image : file,
+                message : '',
+                placeval : filename,
+                disabled : true
+            })
+        }else{
+            this.setState({
+                image : null,
+                message : '',
+                placeval : 'Insert Message ...',
+                disabled : false
+            })
+        }
         
-        
-    }
+}
 
-    
-    
-  
     handleSendMessage = () => {
         const myImg = this.props.image;
         const userId = this.props.userId;
-        const {friendId} = this.props.match.params;
+        const {groupname} = this.props.match.params;
         const Token = this.props.token;
 
         const { message, image } = this.state;
     
         if (message || image) {
-          socket.emit('privateMessage', {
+          socket.emit('GroupMessage', {
             fromUserId: userId,
-            toUserId: friendId,
+            toUserId: groupname,
             myToken : Token,
             message: this.state.message,
             image: this.state.image,
@@ -225,14 +201,15 @@ export class Messaging extends Component {
         }
       };
 
-      PreviousChaT = ()=>{
+
+    PreviousChaT = ()=>{
         const userId = this.props.userId;
         if(this.state.oldMessages.length>0){
-            return this.state.oldMessages.map((each, index)=>{
+            return this.state.oldMessages.map((each)=>{
                 
                 if(each.senderId == userId){
                     if(each.message){
-                        return  <div class="card mymsg smallborder sizebigmsg" id={'prev'+index}>
+                        return  <div class="card mymsg smallborder sizebigmsg">
                         <div class="card-body">
                             <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             <p class="card-text textbg">{each.message}</p>
@@ -244,7 +221,7 @@ export class Messaging extends Component {
 
                         
 
-                        return  <div class="card mymsgimg smallborder sizebigmsg" id={'prev'+index}>
+                        return  <div class="card mymsgimg smallborder sizebigmsg">
                         <div class="card-body">
                             <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             
@@ -260,7 +237,7 @@ export class Messaging extends Component {
                 }else{
                     
                     if(each.message){
-                        return  <div class="card sendermsg smallborder sizebigmsg" id={'prev'+index}>
+                        return  <div class="card sendermsg smallborder sizebigmsg">
                         <div class="card-body">
                             <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
                             <p class="card-text textbg">{each.message}</p>
@@ -272,8 +249,7 @@ export class Messaging extends Component {
                     }else{
 
                         
-                        return  <div class="card sendermsgimg smallborder sizebigmsg" id={'prev'+index}>
-                        <div className='secretDisp'></div> 
+                        return  <div class="card sendermsgimg smallborder sizebigmsg">
                         <div class="card-body">
                             <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
                             <img class='msgimgbox' src={each.image}/>
@@ -287,16 +263,18 @@ export class Messaging extends Component {
         }
       }
 
-      loadMessages = ()=>{
-        const {friendId} = this.props.match.params;
+
+
+    loadMessages = ()=>{
+        const {groupname} = this.props.match.params;
         const userId = this.props.userId;
 
         if(this.state.allmessages.length>0){
-            return this.state.allmessages.map((each, index)=>{
+            return this.state.allmessages.map((each)=>{
                 
                 if(each.sender == userId){
                     if(each.text){
-                        return  <div class="card mymsg smallborder sizebigmsg" id={'load'+index}>
+                        return  <div class="card mymsg smallborder sizebigmsg">
                         <div class="card-body">
                             <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             <p class="card-text textbg">{each.text}</p>
@@ -311,7 +289,7 @@ export class Messaging extends Component {
                         // Create Data URL from Blob
                         const dataUrl = URL.createObjectURL(blob);
 
-                        return  <div class="card mymsgimg smallborder sizebigmsg" id={'load'+index}>
+                        return  <div class="card mymsgimg smallborder sizebigmsg">
                         <div class="card-body">
                             <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             
@@ -324,11 +302,11 @@ export class Messaging extends Component {
                     }
                     
 
-                }else{
+                }else {
                    
-                    if(each.text[0].sentBy == friendId){
+                    
                         if(each.text[0].message){
-                            return  <div class="card sendermsg smallborder sizebigmsg wball" id={'load'+index}>
+                            return  <div class="card sendermsg smallborder sizebigmsg wball">
                             <div class="card-body">
                                 <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
                                 <p class="card-text textbg">{each.text[0].message}</p>
@@ -343,17 +321,15 @@ export class Messaging extends Component {
     
                             // Create Data URL from Blob
                             const dataUrl = URL.createObjectURL(blob);
-                            return  <div class="card sendermsgimg smallborder sizebigmsg" id={'load'+index}>
-                            <div className='secretDisp'></div> 
+                            return  <div class="card sendermsgimg smallborder sizebigmsg">
                             <div class="card-body">
-                                
                                 <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
                                 <img class='msgimgbox' src={dataUrl}/>
                                 <sup>{each.text[0].sendingtime}</sup>
                             </div>
                             </div>
                         }
-                    }
+                    
                     
                     
                 }
@@ -361,59 +337,43 @@ export class Messaging extends Component {
         }
       }
 
-        saveMeFromParents = (e)=>{
 
-            document.getElementById("hideit").classList.add('hiddenbtn2');
-            if(this.state.allmessages.length > 0){
-                for(var i=0; i<this.state.allmessages.length; i++){
-                    var idn = 'load'+i;
-                    document.getElementById(idn).classList.add('saveMeGod');
 
-                }
-            }
 
-            if(this.state.oldMessages.length>0){
-                for(var i=0; i<this.state.oldMessages.length; i++){
-                    var idn = 'prev'+i;
-                    document.getElementById(idn).classList.add('saveMeGod');
-                    
-                }
-            }
-        }
+    
 
     render() {
         return (
             <Fragment>
-                <div id="hideit" className='container hiddenbtn' onClick={(e)=>{this.saveMeFromParents(e)}}><AcUnitIcon fontSize='large'/></div>
-
-                <div className='container-fluid sendingbox'>
-                <div className="input-group mb-3">
-                
-                <label for='fileinp' className='me-2 imgcol'><AddPhotoAlternateIcon fontSize='large'/></label>
-                <input id="fileinp" accept="image/jpeg, image/jpg" type='file' onChange={(e)=>{this.setImage(e,e.target.files[0],e.target.value)}}></input>
-                
+            <div className='container-fluid sendingbox'>
+            <div className="input-group mb-3">
             
-                <input id='txtmsg' type="text"  onChange={(e)=>{this.setState({message : e.target.value})}} value={this.state.message} className="form-control" placeholder={this.state.placeval} aria-label="Recipient's message" aria-describedby="button-addon2" disabled={this.state.disabled}/>
-                <button className="btn btn-outline-secondary desbtnsearch" onClick={(e)=>{this.handleSendMessage(e)}} type="button" id="button-addon2"><SendIcon /></button>
-              </div>
-                </div>
-
-
-                
-                <ScrollableFeed className="card-container" id="cardContainer">
- 
-                {this.PreviousChaT()}
-                {this.loadMessages()}
+            <label for='fileinp' className='me-2 imgcol'><AddPhotoAlternateIcon fontSize='large'/></label>
+            <input id="fileinp" accept="image/jpeg, image/jpg" type='file' onChange={(e)=>{this.setImage(e,e.target.files[0],e.target.value)}}></input>
+            
+        
+            <input id='txtmsg' type="text"  onChange={(e)=>{this.setState({message : e.target.value})}} value={this.state.message} className="form-control" placeholder={this.state.placeval} aria-label="Recipient's message" aria-describedby="button-addon2" disabled={this.state.disabled}/>
+            <button className="btn btn-outline-secondary desbtnsearch" onClick={(e)=>{this.handleSendMessage(e)}} type="button" id="button-addon2"><SendIcon /></button>
+          </div>
+            </div>
 
 
 
 
-                </ScrollableFeed>
-           
 
+
+            <ScrollableFeed className="card-container" id="cardContainer">
+
+            {this.PreviousChaT()}
+            {this.loadMessages()}
+
+
+
+
+            </ScrollableFeed>
             </Fragment>
         )
-    }
+  }
 }
 
-export default Messaging
+export default GroupChat

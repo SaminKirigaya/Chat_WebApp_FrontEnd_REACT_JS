@@ -113,6 +113,7 @@ export class EditProfile extends Component {
             }
 
             const { slno } = this.props;
+            
             if(this.props.element != 9){
                 try{
                     const res = await axios.get(`/setmeoutmsgbox/${slno}`,{

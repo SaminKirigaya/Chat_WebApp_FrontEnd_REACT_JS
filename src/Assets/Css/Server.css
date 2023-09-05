@@ -2011,8 +2011,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color: #e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
     .mymsg{
         background-color: #ffeff7;
@@ -2032,8 +2032,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color: #e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
 
      }
      .sendermsg{
@@ -2242,8 +2242,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color:#e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
     .mymsg{
         background-color: #ffeff7;
@@ -2263,8 +2263,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color: #e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
      .sendermsg{
         background-color: #ffeff7;
@@ -2483,8 +2483,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color: #e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
 
     .mymsg{
@@ -2505,8 +2505,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color: #e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
      .sendermsg{
         background-color: #ffeff7;
@@ -2709,8 +2709,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color: #e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
     .mymsg{
         background-color: #ffeff7;
@@ -2730,8 +2730,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color:#e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
      .sendermsg{
         background-color: #ffeff7;
@@ -2987,8 +2987,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color: #e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
     .mymsg{
         background-color: #ffeff7;
@@ -3009,8 +3009,8 @@
         margin-bottom: 0.5rem;
         border-radius: 1.5rem;
         color:#e80070;
-        min-height: 46vh !important;
-        max-height: 46vh !important;
+        min-height: 47vh !important;
+        max-height: 47vh !important;
      }
 
      .sendermsg{
@@ -3543,4 +3543,40 @@ display: none;
 
 .opct{
     opacity: 0.5;
+}
+
+
+.specialava{
+    box-shadow: 0 0 24px 1px white;
+}
+
+
+.hiddenbtn{
+    display : hidden !important;
+    position : absolute !important;
+    top : 1.2% !important;
+    
+    color : #e80070 !important;
+}
+
+.hiddenbtn2{
+    display : hidden !important;
+    position : absolute !important;
+    top : 1.2% !important;
+    
+    color : #ffffff !important;
+}
+
+.saveMeGod{
+    display: none;
+    visibility: none;
+}
+
+
+.secretDisp{
+    display: block !important;
+    position: absolute !important;
+    width: 100% !important;
+    height : 100% !important;
+    background-color: transparent !important;
 }

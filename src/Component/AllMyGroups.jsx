@@ -132,6 +132,16 @@ export class AllMyGroups extends Component {
         })
         socket.emit('authenticate', this.props.slno);
 
+        if(this.props.element != 9){
+            
+            const res = await axios.get(`/setmeoutmsgbox/${this.props.slno}`,{
+                headers : {
+                    'Content-Type' : 'application/json'
+                }
+            })
+       
+    }
+
         try{
             const res= await axios.get(`/getMyCreatedGroups/${this.props.slno}`,{
                 headers : {

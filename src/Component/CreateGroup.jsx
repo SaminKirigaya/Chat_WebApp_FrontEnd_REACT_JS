@@ -39,6 +39,16 @@ export class CreateGroup extends Component {
 
     async componentDidMount(){
         socket.emit('authenticate', this.props.slno);
+
+        if(this.props.element != 9){
+            
+            const res = await axios.get(`/setmeoutmsgbox/${this.props.slno}`,{
+                headers : {
+                    'Content-Type' : 'application/json'
+                }
+            })
+       
+    }
     }
 
     async componentDidUpdate(prevProps){

@@ -122,7 +122,7 @@ export class AllGroupIChat extends Component {
                 <td className='purpose'>{each.purpose}</td>
                 <td>{each.country}</td>
                 <td>{formatDate(each.createdAt)}</td>
-                <td className='btnalgn'><Link to='#' type="button" className="btn btn-sm btn-danger tspn me-3"><SendIcon /></Link> <button onClick={(e)=>{this.leaveThisGroup(e,each.groupname)}} type="button" className="btn btn-sm btn-danger tspn"><MeetingRoomIcon /></button></td>
+                <td className='btnalgn'><Link to={'/groupChat/'+each.groupname} type="button" className="btn btn-sm btn-danger tspn me-3"><SendIcon /></Link> <button onClick={(e)=>{this.leaveThisGroup(e,each.groupname)}} type="button" className="btn btn-sm btn-danger tspn"><MeetingRoomIcon /></button></td>
               
                 </tr>
 
@@ -143,6 +143,15 @@ export class AllGroupIChat extends Component {
             left : false
         })
         socket.emit('authenticate', this.props.slno);
+        if(this.props.element != 9){
+            
+            const res = await axios.get(`/setmeoutmsgbox/${this.props.slno}`,{
+                headers : {
+                    'Content-Type' : 'application/json'
+                }
+            })
+       
+    }
 
         try{
             const res = await   axios.get(`/getMyJoinedGroups/${this.props.slno}`,{
