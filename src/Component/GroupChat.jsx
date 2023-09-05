@@ -12,6 +12,8 @@ import axios from 'axios';
 
 import Cookies from 'js-cookie';
 
+import {GiHighKick} from 'react-icons/fa';
+
 
 
 const socket = io('http://localhost:8000');
@@ -205,14 +207,14 @@ export class GroupChat extends Component {
     PreviousChaT = ()=>{
         const userId = this.props.userId;
         if(this.state.oldMessages.length>0){
-            return this.state.oldMessages.map((each)=>{
+            return this.state.oldMessages.map((each, index)=>{
                 
                 if(each.senderId == userId){
                     if(each.message){
-                        return  <div class="card mymsg smallborder sizebigmsg">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
-                            <p class="card-text textbg">{each.message}</p>
+                        return  <div className="card mymsg smallborder sizebigmsg" key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center wball headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            <p className="card-text textbg bodfont">{each.message}</p>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
                             
                         </div>
@@ -221,9 +223,9 @@ export class GroupChat extends Component {
 
                         
 
-                        return  <div class="card mymsgimg smallborder sizebigmsg">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                        return  <div className="card mymsgimg smallborder sizebigmsg" key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             
                             <img class='msgimgbox' src={each.image}/>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
@@ -237,10 +239,10 @@ export class GroupChat extends Component {
                 }else{
                     
                     if(each.message){
-                        return  <div class="card sendermsg smallborder sizebigmsg">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
-                            <p class="card-text textbg">{each.message}</p>
+                        return  <div className="card sendermsg smallborder sizebigmsg" key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center wball headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
+                            <p className="card-text textbg bodfont">{each.message}</p>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
 
                         </div>
@@ -249,9 +251,9 @@ export class GroupChat extends Component {
                     }else{
 
                         
-                        return  <div class="card sendermsgimg smallborder sizebigmsg">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
+                        return  <div className="card sendermsgimg smallborder sizebigmsg" key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
                             <img class='msgimgbox' src={each.image}/>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
                         </div>
@@ -270,14 +272,14 @@ export class GroupChat extends Component {
         const userId = this.props.userId;
 
         if(this.state.allmessages.length>0){
-            return this.state.allmessages.map((each)=>{
+            return this.state.allmessages.map((each, index)=>{
                 
                 if(each.sender == userId){
                     if(each.text){
-                        return  <div class="card mymsg smallborder sizebigmsg">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
-                            <p class="card-text textbg">{each.text}</p>
+                        return  <div className="card mymsg smallborder sizebigmsg" key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center wball headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            <p className="card-text textbg bodfont">{each.text}</p>
                             <sup>{each.sendingtime}</sup>
                             
                         </div>
@@ -289,9 +291,9 @@ export class GroupChat extends Component {
                         // Create Data URL from Blob
                         const dataUrl = URL.createObjectURL(blob);
 
-                        return  <div class="card mymsgimg smallborder sizebigmsg">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                        return  <div className="card mymsgimg smallborder sizebigmsg" key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             
                             <img class='msgimgbox' src={dataUrl}/>
                             <sup>{each.sendingtime}</sup>
@@ -306,10 +308,10 @@ export class GroupChat extends Component {
                    
                     
                         if(each.text[0].message){
-                            return  <div class="card sendermsg smallborder sizebigmsg wball">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
-                                <p class="card-text textbg">{each.text[0].message}</p>
+                            return  <div className="card sendermsg smallborder sizebigmsg wball" key={index}>
+                            <div className="card-body">
+                                <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
+                                <p className="card-text textbg bodfont">{each.text[0].message}</p>
                                 <sup>{each.text[0].sendingtime}</sup>
     
                             </div>
@@ -321,9 +323,9 @@ export class GroupChat extends Component {
     
                             // Create Data URL from Blob
                             const dataUrl = URL.createObjectURL(blob);
-                            return  <div class="card sendermsgimg smallborder sizebigmsg">
-                            <div class="card-body">
-                                <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
+                            return  <div className="card sendermsgimg smallborder sizebigmsg" key={index}>
+                            <div className="card-body">
+                                <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
                                 <img class='msgimgbox' src={dataUrl}/>
                                 <sup>{each.text[0].sendingtime}</sup>
                             </div>

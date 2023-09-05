@@ -82,8 +82,8 @@ export class Logout extends Component {
     return (
         <Fragment>
             <div className='container-fluid login d-flex flex-column justify-content-center align-items-center'>
-              <h3 className='loginstylelout loganimtxt zind'>LOGOUT !!!</h3>
-              <div className="card mb-3 profilecardbg">
+              <h3 className='loginstylelout loganimtxt zind headfont'>LOGOUT !!!</h3>
+              <div className="card mb-3 profilecardbg bodfont">
               <div className="row g-0">
                 <div className="col-md-4 d-flex justify-content-center align-items-center mt-5 mt-md-0">
                   
@@ -118,7 +118,8 @@ export class Logout extends Component {
                 <Alert onClose={this.handleClose} severity="success" sx={{
                   width: '100%',
                   backgroundColor: '#e80070', // Set your custom color here
-                  color: 'white' // Set text color for visibility
+                  color: 'white', // Set text color for visibility
+                  fontFamily: 'Cormorant Infant'
                 }}>
                   {this.state.returnMessage}
                 </Alert>

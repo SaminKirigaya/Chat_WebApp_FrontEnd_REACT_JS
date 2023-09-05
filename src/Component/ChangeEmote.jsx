@@ -137,9 +137,9 @@ export class ChangeEmote extends Component {
     return (
       <Fragment>
       <div className='container-fluid d-flex flex-column justify-content-center mainnav p-0'>
-            <h2 className='mb-4 mx-auto avat'>Select Your Avatar </h2>
+            <h2 className='mb-4 mx-auto avat headfont'>Select Your Avatar </h2>
 
-            <div class="card cardb d-flex justify-content-start mx-auto" >
+            <div className="card cardb d-flex justify-content-start mx-auto bodfont">
             <Stack direction="row" spacing={2}>
             <div id='id1' className='anim' onClick={(e)=>{this.changeIt("http://localhost:8000/public/images/cat1.jpg",'id1')}}><Avatar alt="Remy Sharp" src="http://localhost:8000/public/images/cat1.jpg" sx={{ width: 46, height: 46, border: '0.13rem solid #dd3d8a'}}
             /></div>
@@ -189,7 +189,7 @@ export class ChangeEmote extends Component {
             </Stack>
             </div>
 
-            <div className='container-fluid d-flex justify-content-center align-items-center mt-4'>
+            <div className='container-fluid d-flex justify-content-center align-items-center mt-4 bodfont'>
             <Link to='#' onClick={(e)=>{this.changeAvatar(e)}} className="btn btn-sm btn-primary btndescardprofile mt-1"><InsertEmoticonIcon /> Change Avatar</Link>
             </div>
             
@@ -203,7 +203,8 @@ export class ChangeEmote extends Component {
                 <Alert onClose={this.handleClose} severity="success" sx={{
                   width: '100%',
                   backgroundColor: '#e80070', // Set your custom color here
-                  color: 'white' // Set text color for visibility
+                  color: 'white', // Set text color for visibility
+                  fontFamily: 'Cormorant Infant'
                 }}>
                   {this.state.returnMessage}
                 </Alert>

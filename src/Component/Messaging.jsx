@@ -232,10 +232,10 @@ export class Messaging extends Component {
                 
                 if(each.senderId == userId){
                     if(each.message){
-                        return  <div class="card mymsg smallborder sizebigmsg" id={'prev'+index}>
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
-                            <p class="card-text textbg">{each.message}</p>
+                        return  <div className="card mymsg smallborder sizebigmsg" id={'prev'+index} key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center wball headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            <p className="card-text textbg bodfont">{each.message}</p>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
                             
                         </div>
@@ -244,9 +244,9 @@ export class Messaging extends Component {
 
                         
 
-                        return  <div class="card mymsgimg smallborder sizebigmsg" id={'prev'+index}>
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                        return  <div className="card mymsgimg smallborder sizebigmsg" id={'prev'+index} key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             
                             <img class='msgimgbox' src={each.image}/>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
@@ -260,10 +260,10 @@ export class Messaging extends Component {
                 }else{
                     
                     if(each.message){
-                        return  <div class="card sendermsg smallborder sizebigmsg" id={'prev'+index}>
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
-                            <p class="card-text textbg">{each.message}</p>
+                        return  <div className="card sendermsg smallborder sizebigmsg" id={'prev'+index} key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center wball headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
+                            <p className="card-text textbg bodfont">{each.message}</p>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
 
                         </div>
@@ -272,10 +272,10 @@ export class Messaging extends Component {
                     }else{
 
                         
-                        return  <div class="card sendermsgimg smallborder sizebigmsg" id={'prev'+index}>
+                        return  <div className="card sendermsgimg smallborder sizebigmsg" id={'prev'+index} key={index}>
                         <div className='secretDisp'></div> 
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
                             <img class='msgimgbox' src={each.image}/>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
                         </div>
@@ -296,10 +296,10 @@ export class Messaging extends Component {
                 
                 if(each.sender == userId){
                     if(each.text){
-                        return  <div class="card mymsg smallborder sizebigmsg" id={'load'+index}>
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center wball"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
-                            <p class="card-text textbg">{each.text}</p>
+                        return  <div className="card mymsg smallborder sizebigmsg" id={'load'+index} key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center wball headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                            <p className="card-text textbg bodfont">{each.text}</p>
                             <sup>{each.sendingtime}</sup>
                             
                         </div>
@@ -311,9 +311,9 @@ export class Messaging extends Component {
                         // Create Data URL from Blob
                         const dataUrl = URL.createObjectURL(blob);
 
-                        return  <div class="card mymsgimg smallborder sizebigmsg" id={'load'+index}>
-                        <div class="card-body">
-                            <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
+                        return  <div className="card mymsgimg smallborder sizebigmsg" id={'load'+index} key={index}>
+                        <div className="card-body">
+                            <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp;{each.username}</h5>
                             
                             <img class='msgimgbox' src={dataUrl}/>
                             <sup>{each.sendingtime}</sup>
@@ -328,10 +328,10 @@ export class Messaging extends Component {
                    
                     if(each.text[0].sentBy == friendId){
                         if(each.text[0].message){
-                            return  <div class="card sendermsg smallborder sizebigmsg wball" id={'load'+index}>
-                            <div class="card-body">
-                                <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
-                                <p class="card-text textbg">{each.text[0].message}</p>
+                            return  <div className="card sendermsg smallborder sizebigmsg wball" id={'load'+index} key={index}>
+                            <div className="card-body">
+                                <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
+                                <p className="card-text textbg bodfont">{each.text[0].message}</p>
                                 <sup>{each.text[0].sendingtime}</sup>
     
                             </div>
@@ -343,11 +343,11 @@ export class Messaging extends Component {
     
                             // Create Data URL from Blob
                             const dataUrl = URL.createObjectURL(blob);
-                            return  <div class="card sendermsgimg smallborder sizebigmsg" id={'load'+index}>
+                            return  <div className="card sendermsgimg smallborder sizebigmsg" id={'load'+index} key={index}>
                             <div className='secretDisp'></div> 
-                            <div class="card-body">
+                            <div className="card-body">
                                 
-                                <h5 class="card-title d-flex flex-row text-center"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
+                                <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
                                 <img class='msgimgbox' src={dataUrl}/>
                                 <sup>{each.text[0].sendingtime}</sup>
                             </div>

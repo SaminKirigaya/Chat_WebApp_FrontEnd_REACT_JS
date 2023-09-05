@@ -198,8 +198,8 @@ export class AllMyGroups extends Component {
 
     showgroups = ()=>{
         if(this.state.allgroups.length>0){
-            return  this.state.allgroups.map((each)=>{
-                return  <tr className='bordcol'>
+            return  this.state.allgroups.map((each, index)=>{
+                return  <tr className='bordcol' key={index}>
                 <th scope="row" className='groupname'>{each.groupname}</th>
                 <td className='purpose'>{each.purpose}</td>
                 <td>{each.country}</td>
@@ -215,7 +215,7 @@ export class AllMyGroups extends Component {
 
       showNoGroups = ()=>{
         if(this.state.allgroups.length==0){
-            return  <div><p className='pinktxt'>You Did Not Create Any Group Yet ...</p></div>
+            return  <div><p className='pinktxt bodfont'>You Did Not Create Any Group Yet ...</p></div>
         }
       }
 
@@ -245,11 +245,11 @@ export class AllMyGroups extends Component {
         if(this.state.availFriends.length>0){
             return  this.state.availFriends.map((each, index)=>{
                 return  <h5 id={'friend'+index} className='d-flex align-items-center brdbtm pb-2'>
-                <Avatar fontSize="small" alt="Remy Sharp" src={each.image} /> &nbsp; {each.username}  <button onClick={(e)=>{this.addToGroupPerm(e,each._id, index)}} type="button" className="btn btn-sm btn-danger tspn ms-auto">Add Member</button> 
+                <Avatar fontSize="small" alt="Remy Sharp" src={each.image} /> &nbsp; <span className='headfont'>{each.username}</span>  <button onClick={(e)=>{this.addToGroupPerm(e,each._id, index)}} type="button" className="btn btn-sm btn-danger tspn ms-auto bodfont">Add Member</button> 
             </h5> 
             })
         }else{
-            return  <Typography id="modal-modal-description" sx={{ mt: 2, textAlign: 'center' }}>
+            return  <Typography id="modal-modal-description" sx={{ mt: 2, textAlign: 'center', fontFamily : 'Oleo Script' }}>
             Sad You Got No Friends To Add Anymore ....
         </Typography>  
         }
@@ -260,8 +260,8 @@ export class AllMyGroups extends Component {
     return (
         <Fragment>
             <div className='allmygroups p-o m-0 flex-column'>
-            <h5 className='mb-4 mt-4 pinktxt'>Your Created Groups :</h5>
-            <table class="table text-center tabledes">
+            <h5 className='mb-4 mt-4 pinktxt headfont'>Your Created Groups :</h5>
+            <table className="table text-center tabledes bodfont">
             <thead>
               <tr>
                 
@@ -292,7 +292,8 @@ export class AllMyGroups extends Component {
                 <Alert onClose={this.handleClose} severity="success" sx={{
                   width: '100%',
                   backgroundColor: '#e80070', // Set your custom color here
-                  color: 'white' // Set text color for visibility
+                  color: 'white', // Set text color for visibility
+                  fontFamily: 'Cormorant Infant'
                 }}>
                   {this.state.returnMessage}
                 </Alert>
@@ -306,7 +307,7 @@ export class AllMyGroups extends Component {
             aria-describedby="modal-modal-description"
         >
             <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
+            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{fontFamily: 'Oleo Script'}}>
                 Add Friend In Group...
             </Typography>
             <hr></hr>

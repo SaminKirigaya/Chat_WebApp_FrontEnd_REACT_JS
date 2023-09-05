@@ -116,8 +116,8 @@ export class AllGroupIChat extends Component {
 
     showgroups = ()=>{
         if(this.state.allgroups.length>0){
-            return  this.state.allgroups.map((each)=>{
-                return  <tr className='bordcol'>
+            return  this.state.allgroups.map((each, index)=>{
+                return  <tr className='bordcol' key={index}>
                 <th scope="row" className='groupname'>{each.groupname}</th>
                 <td className='purpose'>{each.purpose}</td>
                 <td>{each.country}</td>
@@ -133,7 +133,7 @@ export class AllGroupIChat extends Component {
 
     showNoGroups = ()=>{
     if(this.state.allgroups.length==0){
-        return  <div><p className='pinktxt'>You Are Not Connected To Any Group Yet ...</p></div>
+        return  <div><p className='pinktxt bodfont'>You Are Not Connected To Any Group Yet ...</p></div>
     }
     }
 
@@ -184,8 +184,8 @@ export class AllGroupIChat extends Component {
     return (
         <Fragment>
         <div className='allmygroups p-o m-0 flex-column'>
-        <h5 className='mb-4 mt-4 pinktxt'>Your Connected Groups :</h5>
-        <table class="table text-center tabledes">
+        <h5 className='mb-4 mt-4 pinktxt headfont'>Your Connected Groups :</h5>
+        <table className="table text-center tabledes bodfont">
         <thead>
           <tr>
             
@@ -216,7 +216,8 @@ export class AllGroupIChat extends Component {
             <Alert onClose={this.handleClose} severity="success" sx={{
               width: '100%',
               backgroundColor: '#e80070', // Set your custom color here
-              color: 'white' // Set text color for visibility
+              color: 'white', // Set text color for visibility
+              fontFamily: 'Cormorant Infant'
             }}>
               {this.state.returnMessage}
             </Alert>

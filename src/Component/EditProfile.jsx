@@ -241,7 +241,7 @@ export class EditProfile extends Component {
     return (
         <Fragment>
         <div className='container-fluid login d-flex flex-column justify-content-center align-items-center'>
-        <h3 className='loginstyle loganimtxt zind'>EDIT !!!</h3>
+        <h3 className='loginstyle loganimtxt zind headfont'>EDIT !!!</h3>
         <div className="card cardwidth profilecardbg">
         <div className='mx-auto mt-4 anim'>
         <Stack direction="row" spacing={2}>
@@ -252,9 +252,9 @@ export class EditProfile extends Component {
         </div>
         
         
-        <div className="card-body">
-          <h5 className="card-title"><PersonIcon fontSize='large'/>@_{this.state.userData.username}</h5>
-          <p clasName="card-text"><BadgeIcon/> <span>Full Name : </span><input id='fullname' onChange={(e)=>{this.changeFullName(this.state.userData._id,e.target.value)}} value={this.state.userData.fullname} className="form-control form-control-sm" type="text" placeholder="Full Name" aria-label=".form-control-sm example" /><br></br><DateRangeIcon /> <span>Date of Birth : </span><input id='dateofB' onChange={(e)=>{this.changeDate(e.target.value)}} value={this.dateConvert2(this.state.userData.dateOfBirth)} className="form-control form-control-sm" type="date" placeholder="Date of Birth" aria-label=".form-control-sm example" /><br></br><PublicIcon /> <span>Country : </span><input id='country' onChange={(e)=>{this.changeCountry(e.target.value)}} value={this.state.userData.country} className="form-control form-control-sm" type="text" placeholder="Country" aria-label=".form-control-sm example" /><br></br><AccessibilityNewIcon /> <span>Age : </span><input id='age' onChange={(e)=>{this.changeAge(e.target.value)}} value={this.state.userData.age} className="form-control form-control-sm" type="text" placeholder="Age" aria-label=".form-control-sm example" /><br></br><WcIcon /> <span>Gender : </span><select id='gender' className="form-select form-select-sm"  onChange={(e)=>{this.changeGender(e.target.value)}} aria-label=".form-select-sm example">
+        <div className="card-body bodfont">
+          <h5 className="card-title"><PersonIcon fontSize='large'/><b>@_{this.state.userData.username}</b></h5>
+          <p clasName="card-text"><BadgeIcon/> <span className='bolding'>Full Name : </span><input autoComplete='none' id='fullname' onChange={(e)=>{this.changeFullName(this.state.userData._id,e.target.value)}} value={this.state.userData.fullname} className="form-control form-control-sm" type="text" placeholder="Full Name" aria-label=".form-control-sm example" /><br></br><DateRangeIcon /> <span className='bolding'>Date of Birth : </span><input autoComplete='none' id='dateofB' onChange={(e)=>{this.changeDate(e.target.value)}} value={this.dateConvert2(this.state.userData.dateOfBirth)} className="form-control form-control-sm" type="date" placeholder="Date of Birth" aria-label=".form-control-sm example" /><br></br><PublicIcon /> <span className='bolding'>Country : </span><input autoComplete='none' id='country' onChange={(e)=>{this.changeCountry(e.target.value)}} value={this.state.userData.country} className="form-control form-control-sm" type="text" placeholder="Country" aria-label=".form-control-sm example" /><br></br><AccessibilityNewIcon /> <span className='bolding'>Age : </span><input autoComplete='none' id='age' onChange={(e)=>{this.changeAge(e.target.value)}} value={this.state.userData.age} className="form-control form-control-sm" type="text" placeholder="Age" aria-label=".form-control-sm example" /><br></br><WcIcon /> <span className='bolding'>Gender : </span><select id='gender' className="form-select form-select-sm"  onChange={(e)=>{this.changeGender(e.target.value)}} aria-label=".form-select-sm example">
           <option selected disabled>Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
@@ -273,7 +273,8 @@ export class EditProfile extends Component {
                 <Alert onClose={this.handleClose} severity="success" sx={{
                   width: '100%',
                   backgroundColor: '#e80070', // Set your custom color here
-                  color: 'white' // Set text color for visibility
+                  color: 'white', // Set text color for visibility
+                  fontFamily: 'Cormorant Infant'
                 }}>
                   {this.state.returnMessage}
                 </Alert>

@@ -67,13 +67,16 @@ export class ForgotPass extends Component {
     this.setState({open : false})
     };
 
+    async componentDidMount(){
+      window.$('[data-bs-toggle="tooltip"]').tooltip();
+    }
 
   render() {
     return (
         <Fragment>
             <div className='container-fluid login d-flex flex-column justify-content-center align-items-center'>
-            <h3 className='loginstyleforg loganimtxt'>FORGOT PASS !!!</h3>
-                <div className='row row-cols-1 row-cols-md-8 d-flex flex-column justify-content-center p-4 bodform'>
+            <h3 className='loginstyleforg loganimtxt headfont'>FORGOT PASS !!!</h3>
+                <div className='row row-cols-1 row-cols-md-8 d-flex flex-column justify-content-center p-4 bodform bodfont'>
 
                     
                     <div className='col col-md-3 d-flex justify-content-center align-items-center mb-3 icondeslog mx-auto'> 
@@ -81,7 +84,7 @@ export class ForgotPass extends Component {
                     </div>
                 
                     <div className='col col-md-12 d-flex justify-content-center mb-2'>
-                    <input id='mail' className="form-control form-control-sm" onChange={(e)=>{this.setState({mail : e.target.value})}} type="text" placeholder="Email@" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide the email with which you registered your account. " id='mail' className="form-control form-control-sm" onChange={(e)=>{this.setState({mail : e.target.value})}} type="text" placeholder="Email@" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div>
                     
                     <div className='col col-md-12 d-flex justify-content-center'>
@@ -89,8 +92,8 @@ export class ForgotPass extends Component {
                     </div>
 
                 </div>
-                <sub className='regclick mt-3'>Want To Login Now ? <Link className='linkhreflines' to="/login">CLICK HERE</Link></sub>
-                <sub className='forgotclick mt-4'>Dont Have Any Id ? <Link className='linkhreflines' to="/registration">CLICK HERE</Link> </sub>
+                <sub className='regclick mt-3 bodfont'>Want To Login Now ? <Link className='linkhreflines' to="/login">CLICK HERE</Link></sub>
+                <sub className='forgotclick mt-4 bodfont'>Dont Have Any Id ? <Link className='linkhreflines' to="/registration">CLICK HERE</Link> </sub>
            
                 <Snackbar
                   open={this.state.open}
@@ -101,7 +104,8 @@ export class ForgotPass extends Component {
                 <Alert onClose={this.handleClose} severity="success" sx={{
                   width: '100%',
                   backgroundColor: '#e80070', // Set your custom color here
-                  color: 'white' // Set text color for visibility
+                  color: 'white', // Set text color for visibility
+                  fontFamily : 'Cormorant Infant'
                 }}>
                   {this.state.returnMessage}
                 </Alert>

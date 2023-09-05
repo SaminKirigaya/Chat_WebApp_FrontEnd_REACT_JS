@@ -102,8 +102,8 @@ export class UserProfile extends Component {
     return (
         <Fragment>
         <div className='container-fluid login d-flex flex-column justify-content-center align-items-center'>
-        <h3 className='loginstyle loganimtxt zind'>PROFILE !!!</h3>
-        <div className="card cardwidth profilecardbg">
+        <h3 className='loginstyle loganimtxt zind headfont'>PROFILE !!!</h3>
+        <div className="card cardwidth profilecardbg bodfont">
         <div className='mx-auto mt-4 anim'>
         <Stack direction="row" spacing={2}>
         <Avatar alt="Remy Sharp" src={this.props.image} sx={{ width: 56, height: 56, border: '0.13rem solid #dd3d8a' }}
@@ -114,8 +114,8 @@ export class UserProfile extends Component {
         
         
         <div className="card-body">
-          <h5 className="card-title"><PersonIcon fontSize='large'/>@_{this.state.userData.username}</h5>
-          <p clasName="card-text"><BadgeIcon/> <span>Full Name : </span>{this.state.userData.fullname}<br></br><AttachEmailIcon /><span> Email : </span>{this.state.userData.email}<br></br><DateRangeIcon /> <span>Date of Birth : </span>{this.dateConvert(this.state.userData.dateOfBirth)}<br></br><PublicIcon /> <span>Country : </span>{this.state.userData.country}<br></br><AccessibilityNewIcon /> <span>Age : </span>{this.state.userData.age}<br></br><WcIcon /> <span>Gender : </span>{this.state.userData.gender}<br></br><TaskAltIcon/> <span>Joining Date : </span>{this.dateConvert(this.state.userData.joinedDate)}</p>
+          <h5 className="card-title"><PersonIcon fontSize='large'/><b>@_{this.state.userData.username}</b></h5>
+          <p className="card-text"><BadgeIcon/> <span className='bolding'>Full Name : </span>{this.state.userData.fullname}<br></br><AttachEmailIcon /><span className='bolding'> Email : </span>{this.state.userData.email}<br></br><DateRangeIcon /> <span className='bolding'>Date of Birth : </span>{this.dateConvert(this.state.userData.dateOfBirth)}<br></br><PublicIcon /> <span className='bolding'>Country : </span>{this.state.userData.country}<br></br><AccessibilityNewIcon /> <span className='bolding'>Age : </span>{this.state.userData.age}<br></br><WcIcon /> <span className='bolding'>Gender : </span>{this.state.userData.gender}<br></br><TaskAltIcon/> <span className='bolding'>Joining Date : </span>{this.dateConvert(this.state.userData.joinedDate)}</p>
           <Link to={'/editProfile/'+this.state.userData._id} className="btn btn-sm btn-danger btndescardprofile"><ManageAccountsIcon />Edit Profile</Link><br></br>
           <Link to={'/changeEmote/'+this.state.userData._id} className="btn btn-sm btn-danger btndescardprofile mt-1"><InsertEmoticonIcon />Change Avatar</Link><br></br>
           <Link to={'/deleteID/'+this.state.userData._id} className="btn btn-sm btn-danger btndescardprofile mt-1"><DeleteIcon />Delete Account</Link>

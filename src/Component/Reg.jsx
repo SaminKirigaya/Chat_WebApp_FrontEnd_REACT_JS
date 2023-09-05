@@ -39,6 +39,10 @@ export class Reg extends Component {
     }
   }
 
+  async componentDidMount(){
+    window.$('[data-bs-toggle="tooltip"]').tooltip();
+  }
+
   
   
 
@@ -107,27 +111,27 @@ export class Reg extends Component {
     return (
         <Fragment>
             <div className='container-fluid login d-flex flex-column justify-content-center align-items-center'>
-            <h3 className='loginstylereg loganimtxt'>REGISTRATION !!!</h3>
-                <div className='row row-cols-1 row-cols-md-12 d-flex flex-row justify-content-center p-4 regbodform'>
+            <h3 className='loginstylereg loganimtxt headfont'>REGISTRATION !!!</h3>
+                <div className='row row-cols-1 row-cols-md-12 d-flex flex-row justify-content-center p-4 regbodform bodfont'>
 
                     
                     
                 
                     <div className='col col-md-6 d-flex justify-content-center mb-2'>
-                    <input id='uname' className="form-control form-control-sm" onChange={(e)=>{this.setState({username : e.target.value})}} type="text" placeholder="UserName" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide valid username ... Only upper or lowercase letters with numbers allowed and no space ... Also it needs to be unique." id='uname' className="form-control form-control-sm" onChange={(e)=>{this.setState({username : e.target.value})}} type="text" placeholder="UserName" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div>
 
 
                     <div className='col col-md-6 d-flex justify-content-center mb-2'>
-                    <input id='fname' className="form-control form-control-sm" onChange={(e)=>{this.setState({fullname : e.target.value})}} type="text" placeholder="Full Name" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide valid fullname with no numbers or special characters." id='fname' className="form-control form-control-sm" onChange={(e)=>{this.setState({fullname : e.target.value})}} type="text" placeholder="Full Name" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div><div className='col col-md-6 d-flex justify-content-center mb-2'>
-                    <input id='email' className="form-control form-control-sm" onChange={(e)=>{this.setState({email : e.target.value})}} type="text" placeholder="Email@" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide valid user email here." id='email' className="form-control form-control-sm" onChange={(e)=>{this.setState({email : e.target.value})}} type="text" placeholder="Email@" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div><div className='col col-md-6 d-flex justify-content-center mb-2'>
-                    <input id='country' className="form-control form-control-sm" onChange={(e)=>{this.setState({country : e.target.value})}} type="text" placeholder="Country" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide valid country." id='country' className="form-control form-control-sm" onChange={(e)=>{this.setState({country : e.target.value})}} type="text" placeholder="Country" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div><div className='col col-md-6 d-flex justify-content-center mb-2'>
-                    <input id='birth' className="form-control form-control-sm" onChange={(e)=>{this.setState({birth : e.target.value})}} type="date" placeholder="Date of Birth" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide valid birthday." id='birth' className="form-control form-control-sm" onChange={(e)=>{this.setState({birth : e.target.value})}} type="date" placeholder="Date of Birth" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div><div className='col col-md-6 d-flex justify-content-center mb-2'>
-                    <input id='age' className="form-control form-control-sm" onChange={(e)=>{this.setState({age : e.target.value})}} type="number" min='9' max='100' placeholder="Age" aria-label=".form-control-sm example" />
+                    <input id='age' className="form-control form-control-sm" onChange={(e)=>{this.setState({age : e.target.value})}} type="number" min='9' max='100' placeholder="Age" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div><div className='col col-md-12 d-flex justify-content-center mb-2'>
                     <select className="form-select form-select-sm"  onChange={(e)=>{this.setState({gender : e.target.value})}} aria-label=".form-select-sm example">
                     <option selected disabled>Gender</option>
@@ -139,10 +143,10 @@ export class Reg extends Component {
                     
 
                     <div className='col col-md-6 d-flex justify-content-center mb-3'>
-                    <input id='pass' className="form-control form-control-sm"  onChange={(e)=>{this.setState({password : e.target.value})}} type="text" placeholder="Password" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Password can only have upper or lowercase letters with numbers with *!@ also must not have any space and contain 6-50 characters ..." id='pass' className="form-control form-control-sm"  onChange={(e)=>{this.setState({password : e.target.value})}} type="text" placeholder="Password" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div>
                     <div className='col col-md-6 d-flex justify-content-center mb-3'>
-                    <input id='cpass' className="form-control form-control-sm"  onChange={(e)=>{this.setState({confirmPassword : e.target.value})}} type="text" placeholder="Confirm Password" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Must be same as password ..." id='cpass' className="form-control form-control-sm"  onChange={(e)=>{this.setState({confirmPassword : e.target.value})}} type="text" placeholder="Confirm Password" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div>
 
 
@@ -151,8 +155,8 @@ export class Reg extends Component {
                     </div>
 
                 </div>
-                <sub className='regclick mt-3'>Want To Login ? <Link className='linkhreflines' to="/login">CLICK HERE</Link></sub>
-                <sub className='forgotclick mt-4'>Forgot Your Password ? <Link className='linkhreflines' to="/forgotpass">CLICK HERE</Link> </sub>
+                <sub className='regclick mt-3 bodfont'>Want To Login ? <Link className='linkhreflines' to="/login">CLICK HERE</Link></sub>
+                <sub className='forgotclick mt-4 bodfont'>Forgot Your Password ? <Link className='linkhreflines' to="/forgotpass">CLICK HERE</Link> </sub>
 
                 <Snackbar
                   open={this.state.open}
@@ -163,7 +167,8 @@ export class Reg extends Component {
                 <Alert onClose={this.handleClose} severity="success" sx={{
                   width: '100%',
                   backgroundColor: '#e80070', // Set your custom color here
-                  color: 'white' // Set text color for visibility
+                  color: 'white', // Set text color for visibility
+                  fontFamily : 'Cormorant Infant'
                 }}>
                   {this.state.returnMessage}
                 </Alert>

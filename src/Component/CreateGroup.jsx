@@ -117,8 +117,8 @@ export class CreateGroup extends Component {
         <Fragment>
             <div className='createGroup d-flex p-0 m-0 justify-content-center align-items-center flex-column'> 
             
-            <h3 className='cgstyle loganimtxt'>Create Groups!!!</h3>
-            <div className='row row-cols-1 row-cols-md-12 d-flex flex-row justify-content-center p-4'>
+            <h3 className='cgstyle loganimtxt headfont'>Create Groups!!!</h3>
+            <div className='row row-cols-1 row-cols-md-12 d-flex flex-row justify-content-center p-4 bodfont'>
 
                     
             <div className='col col-md-9 d-flex justify-content-center mb-2 logobig'>
@@ -126,17 +126,17 @@ export class CreateGroup extends Component {
             </div>    
                 
             <div className='col col-md-7 d-flex justify-content-center mb-2'>
-            <input id='uname' className="form-control form-control-sm" onChange={(e)=>{this.setState({groupname : e.target.value})}} type="text" placeholder="Group Unique Name" aria-label=".form-control-sm example" />
+            <input id='uname' className="form-control form-control-sm" onChange={(e)=>{this.setState({groupname : e.target.value})}} type="text" placeholder="Group Unique Name" aria-label=".form-control-sm example" autoComplete='none'/>
             </div>
 
 
            <div className='col col-md-7 d-flex justify-content-center mb-2'>
-            <textarea id='purpose' className="form-control form-control-sm rztxtarea" onChange={(e)=>{this.setState({purpose : e.target.value})}} type="text" placeholder="Purpose In Few Words ..." aria-label=".form-control-sm example" ></textarea>
+            <textarea id='purpose' className="form-control form-control-sm rztxtarea" onChange={(e)=>{this.setState({purpose : e.target.value})}} type="text" placeholder="Purpose In Few Words ..." aria-label=".form-control-sm example" autoComplete='none'></textarea>
             </div>
 
 
             <div className='col col-md-7 d-flex justify-content-center mb-2'>
-            <input id='country' className="form-control form-control-sm" onChange={(e)=>{this.setState({country : e.target.value})}} type="text" placeholder="Country" aria-label=".form-control-sm example" />
+            <input id='country' className="form-control form-control-sm" onChange={(e)=>{this.setState({country : e.target.value})}} type="text" placeholder="Country" aria-label=".form-control-sm example" autoComplete='none'/>
             </div>
             
 
@@ -158,7 +158,8 @@ export class CreateGroup extends Component {
       <Alert onClose={this.handleClose} severity="success" sx={{
         width: '100%',
         backgroundColor: '#e80070', // Set your custom color here
-        color: 'white' // Set text color for visibility
+        color: 'white', // Set text color for visibility
+        fontFamily: 'Cormorant Infant'
       }}>
         {this.state.returnMessage}
       </Alert>

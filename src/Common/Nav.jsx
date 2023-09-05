@@ -45,6 +45,7 @@ const CreateGroup = React.lazy(()=>import('../Component/CreateGroup'));
 const AllMyGroups = React.lazy(()=>import('../Component/AllMyGroups'));
 const AllGroupIChat = React.lazy(()=>import('../Component/AllGroupIChat'));
 const GroupChat = React.lazy(()=>import('../Component/GroupChat'));
+const HomePage = React.lazy(()=>import('../Component/HomePage'));
 
 export class Nav extends Component {
     constructor(props) {
@@ -61,13 +62,15 @@ export class Nav extends Component {
             user1recverId : '',
             user1avatar :'',
             user2recverId :'',
-            user2avatar:''
+            user2avatar:'',
+            doneload : false
         }
 
         
     }
 
     async   componentDidMount(){
+        
 
         // set auto notif check from server live message every 2 secs nothing will change if no new data is there or amount is changed
         this.intervalId = setInterval(() => {
@@ -340,6 +343,7 @@ export class Nav extends Component {
 
             <Suspense fallback={this.loadingEffect()}>
                 <Switch>
+                    <Route exact path='/' component={()=>(<HomePage />)} />
                     <Route exact path='/login' component={()=>(<Login />)} />
                     <Route exact path='/registration' component={()=>(<Reg />)} />
                     <Route exact path='/forgotpass' component={()=>(<ForgotPass />)} />

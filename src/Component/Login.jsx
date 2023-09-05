@@ -30,6 +30,10 @@ export class Login extends Component {
     }
   }
 
+  async componentDidMount(){
+    window.$('[data-bs-toggle="tooltip"]').tooltip(); 
+  }
+
   handleClick = () => {
     this.setState({open : true})
   };
@@ -64,7 +68,7 @@ export class Login extends Component {
             localStorage.setItem('image',response.data.image);
             localStorage.setItem('token',response.data.token);
             
-            setTimeout(()=>{window.location.href = '/allFriends'},1800);
+            setTimeout(()=>{window.location.href = '/userProfile'},1800);
           }
 
           this.setState({
@@ -83,8 +87,8 @@ export class Login extends Component {
     return (
         <Fragment>
             <div className='container-fluid login d-flex flex-column justify-content-center align-items-center'>
-            <h3 className='loginstyle loganimtxt'>LOGIN !!!</h3>
-                <div className='row row-cols-1 row-cols-md-8 d-flex flex-column justify-content-center p-4 bodform'>
+            <h3 className='loginstyle loganimtxt headfont'>LOGIN !!!</h3>
+                <div className='row row-cols-1 row-cols-md-8 d-flex flex-column justify-content-center p-4 bodform bodfont'>
 
                     
                     <div className='col col-md-3 d-flex justify-content-center align-items-center mb-3 icondeslog mx-auto'> 
@@ -92,18 +96,18 @@ export class Login extends Component {
                     </div>
                 
                     <div className='col col-md-12 d-flex justify-content-center mb-2'>
-                    <input id='mail' onChange={(e)=>{this.setState({email : e.target.value})}} className="form-control form-control-sm" type="text" placeholder="Email@" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide valid user email here." id='mail' onChange={(e)=>{this.setState({email : e.target.value})}} className="form-control form-control-sm" type="text" placeholder="Email@" aria-label=".form-control-sm example" autoComplete='none' />
                     </div>
                     <div className='col col-md-12 d-flex justify-content-center mb-3'>
-                    <input id='pass' onChange={(e)=>{this.setState({pass : e.target.value})}} className="form-control form-control-sm" type="text" placeholder="Password" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Password can only have upper or lowercase letters with numbers with *!@ also must not have any space and contain 6-50 characters ..." id='pass' onChange={(e)=>{this.setState({pass : e.target.value})}} className="form-control form-control-sm" type="text" placeholder="Password" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div>
                     <div className='col col-md-12 d-flex justify-content-center'>
                     <button onClick={(e)=>{this.loginNow(e)}} type="button" className="btn btn-sm btn-danger">Login</button>
                     </div>
 
                 </div>
-                <sub className='regclick mt-3'>Don't Have Any Id Yet ? <Link className='linkhreflines' to="/registration">CLICK HERE</Link></sub>
-                <sub className='forgotclick mt-4'>Forgot Your Password ? <Link className='linkhreflines' to="/forgotpass">CLICK HERE</Link> </sub>
+                <sub className='regclick mt-3 bodfont'>Don't Have Any Id Yet ? <Link className='linkhreflines' to="/registration">CLICK HERE</Link></sub>
+                <sub className='forgotclick mt-4 bodfont'>Forgot Your Password ? <Link className='linkhreflines' to="/forgotpass">CLICK HERE</Link> </sub>
 
 
                 <Snackbar
@@ -115,7 +119,8 @@ export class Login extends Component {
                 <Alert onClose={this.handleClose} severity="success" sx={{
                   width: '100%',
                   backgroundColor: '#e80070', // Set your custom color here
-                  color: 'white' // Set text color for visibility
+                  color: 'white', // Set text color for visibility
+                  fontFamily: 'Cormorant Infant'
                 }}>
                   {this.state.returnMessage}
                 </Alert>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
 @media (min-width:350px) and (max-width:374px){
     .css-1wnsr1i {
         position: absolute;
@@ -3579,4 +3582,25 @@ display: none;
     width: 100% !important;
     height : 100% !important;
     background-color: transparent !important;
+}
+
+
+.headfont{
+    font-family: 'Oleo Script', cursive !important;
+}
+
+.bodfont{
+    font-family: 'Cormorant Infant', serif !important;
+}
+
+.bolding{
+    font-weight: bold;
+}
+
+.tooltip-inner {
+    background-color: white; /* Change to your desired background color */
+    color: #c4005f; /* Change to your desired text color */
+    border: 0.1rem solid #dd3d8a;
+    font-family: 'Cormorant Infant', serif !important;
+
 }

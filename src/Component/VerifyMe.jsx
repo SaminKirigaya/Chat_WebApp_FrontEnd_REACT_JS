@@ -28,6 +28,10 @@ export class VerifyMe extends Component {
         }
     }
 
+    async componentDidMount(){
+      window.$('[data-bs-toggle="tooltip"]').tooltip();
+    }
+
     sendOtp = async(e)=>{
         const formData = new FormData();
         formData.append('email',this.state.email);
@@ -78,8 +82,8 @@ export class VerifyMe extends Component {
     return (
         <Fragment>
             <div className='container-fluid login d-flex flex-column justify-content-center align-items-center'>
-            <h3 className='loginstyle loganimtxt'>Verify!!!</h3>
-                <div className='row row-cols-1 row-cols-md-8 d-flex flex-column justify-content-center p-4 bodform'>
+            <h3 className='loginstyle loganimtxt headfont'>Verify!!!</h3>
+                <div className='row row-cols-1 row-cols-md-8 d-flex flex-column justify-content-center p-4 bodform bodfont'>
 
                     
                     <div className='col col-md-3 d-flex justify-content-center align-items-center mb-3 icondeslog mx-auto'> 
@@ -87,19 +91,19 @@ export class VerifyMe extends Component {
                     </div>
                 
                     <div className='col col-md-12 d-flex justify-content-center mb-2'>
-                    <input id='mail' className="form-control form-control-sm" onChange={(e)=>{this.setState({email : e.target.value})}} type="text" placeholder="Email@" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide registered email address where the otp was sent." id='mail' className="form-control form-control-sm" onChange={(e)=>{this.setState({email : e.target.value})}} type="text" placeholder="Email@" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div>
                     <div className='col col-md-12 d-flex justify-content-center mb-3'>
-                    <input id='otp' className="form-control form-control-sm" onChange={(e)=>{this.setState({otp : e.target.value})}} type="text" placeholder="Verification Code" aria-label=".form-control-sm example" />
+                    <input data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="custom-tooltip" data-bs-title="Provide the otp that was sent to your mail." id='otp' className="form-control form-control-sm" onChange={(e)=>{this.setState({otp : e.target.value})}} type="text" placeholder="Verification Code" aria-label=".form-control-sm example" autoComplete='none'/>
                     </div>
                     <div className='col col-md-12 d-flex justify-content-center'>
                     <button onClick={(e)=>{this.sendOtp(e)}} type="button" className="btn btn-sm btn-danger">Verify</button>
                     </div>
 
                 </div>
-                <sub className='regclick mt-3'>Don't Have Any Id Yet ? <Link className='linkhreflines' to="/registration">CLICK HERE</Link></sub>
-                <sub className='regclick mt-3'>Want To Log In ? <Link className='linkhreflines' to="/login">CLICK HERE</Link></sub>
-                <sub className='forgotclick mt-4'>Forgot Your Password ? <Link className='linkhreflines' to="/forgotpass">CLICK HERE</Link> </sub>
+                <sub className='regclick mt-3 bodfont'>Don't Have Any Id Yet ? <Link className='linkhreflines' to="/registration">CLICK HERE</Link></sub>
+                <sub className='regclick mt-3 bodfont'>Want To Log In ? <Link className='linkhreflines' to="/login">CLICK HERE</Link></sub>
+                <sub className='forgotclick mt-4 bodfont'>Forgot Your Password ? <Link className='linkhreflines' to="/forgotpass">CLICK HERE</Link> </sub>
             
                 <Snackbar
                   open={this.state.open}
@@ -110,7 +114,9 @@ export class VerifyMe extends Component {
                 <Alert onClose={this.handleClose} severity="success" sx={{
                   width: '100%',
                   backgroundColor: '#e80070', // Set your custom color here
-                  color: 'white' // Set text color for visibility
+                  color: 'white', // Set text color for visibility
+                  fontFamily : 'Cormorant Infant'
+
                 }}>
                   {this.state.returnMessage}
                 </Alert>
