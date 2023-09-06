@@ -65,6 +65,15 @@ Here, we will add private chat and group chat feature.
 - Material UI
 - Js Cookie
 
+## Cautions 
+
+- Inside Index.js you will see 
+- axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.headers.common['Authorization'] = 'Bearer '+localStorage.getItem('token');
+
+I used my localhost to work for rest api handle so its set baseurl localhost:8000 change according to your server.
+
+
 ## Support
 
 For support, saminyeasararnob@gmail.com 
