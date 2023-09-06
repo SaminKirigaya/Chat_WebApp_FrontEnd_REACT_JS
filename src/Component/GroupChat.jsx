@@ -12,7 +12,7 @@ import axios from 'axios';
 
 import Cookies from 'js-cookie';
 
-import {GiHighKick} from 'react-icons/fa';
+import { GiHighKick } from 'react-icons/gi'
 
 
 
@@ -57,7 +57,9 @@ export class GroupChat extends Component {
             message : '',
             placeval : 'Insert Message ...',
             disabled : false,
-            username : ''
+            username : '',
+            amIAdmin : false,
+            userKicked : false
         }
 
         socket.on(`${this.props.match.params.groupname}`, (message) => {
@@ -75,6 +77,10 @@ export class GroupChat extends Component {
 
 
     async componentDidMount(){
+        this.setState({
+            userKicked : false
+        })
+
         const myusersl = this.props.userId;
         
         
@@ -108,6 +114,25 @@ export class GroupChat extends Component {
                 })
                 
             }
+
+            const response3 = await axios({
+                url : `/amIGroupAdmin/${myusersl}`,
+                method : 'post',
+                data : {
+                    serial : myusersl,
+                    group : groupname
+                }
+            })
+
+            if(response3.data.message == 'Yes'){
+                this.setState({
+                    amIAdmin : true
+                })
+            }else{
+                this.setState({
+                    amIAdmin : false
+                })
+            }
             
             const { userId } = this.props;
 
@@ -135,10 +160,10 @@ export class GroupChat extends Component {
     }
     
 
-    async componentDidUpdate(prevProps){
+    async componentDidUpdate(prevProps, prevState){
         const { userId } = this.props;
         var {groupname} = this.props.match.params;
-        if(groupname != prevProps.match.params.groupname || this.props.element != prevProps.element){
+        if(groupname != prevProps.match.params.groupname || this.props.element != prevProps.element || this.state.userKicked != prevState.userKicked){
             this.componentDidMount();
         }
 
@@ -241,7 +266,7 @@ export class GroupChat extends Component {
                     if(each.message){
                         return  <div className="card sendermsg smallborder sizebigmsg" key={index}>
                         <div className="card-body">
-                            <h5 className="card-title d-flex flex-row text-center wball headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}</h5>
+                            <h5 className="card-title d-flex flex-row text-center wball headfont"><Avatar alt="Remy Sharp" src={each.senderAvatar} /> &nbsp; {each.username}  {this.state.amIAdmin ? <GiHighKick className='ms-auto' onClick={(e)=>{this.kickEm(e,each.username)}} fontSize="large" /> : null}</h5>
                             <p className="card-text textbg bodfont">{each.message}</p>
                             <sup>{getDateFormated(each.sendingtime)}</sup>
 
@@ -265,6 +290,33 @@ export class GroupChat extends Component {
         }
       }
 
+
+      kickEm= async(e, user)=>{
+        
+        const usersl = this.props.userId;
+        var {groupname} = this.props.match.params;
+        try{
+            const res = await axios({
+                url : `/kickThisGuy/${usersl}`,
+                method : 'post',
+                data : {
+                    username : user,
+                    groupname : groupname
+                }
+            })
+
+            if(res.data.message == 'success'){
+                this.setState({
+                    userKicked : true
+                })
+
+            }
+
+            console.log(res.data.message)
+        }catch(err){
+            console.log(err)
+        }
+      }
 
 
     loadMessages = ()=>{
@@ -310,7 +362,7 @@ export class GroupChat extends Component {
                         if(each.text[0].message){
                             return  <div className="card sendermsg smallborder sizebigmsg wball" key={index}>
                             <div className="card-body">
-                                <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
+                                <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}  {this.state.amIAdmin ? <GiHighKick className='ms-auto' onClick={(e)=>{this.kickEm(e,each.text[0].username)}} fontSize="large" /> : null}</h5>
                                 <p className="card-text textbg bodfont">{each.text[0].message}</p>
                                 <sup>{each.text[0].sendingtime}</sup>
     
@@ -325,7 +377,7 @@ export class GroupChat extends Component {
                             const dataUrl = URL.createObjectURL(blob);
                             return  <div className="card sendermsgimg smallborder sizebigmsg" key={index}>
                             <div className="card-body">
-                                <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username}</h5>
+                                <h5 className="card-title d-flex flex-row text-center headfont"><Avatar alt="Remy Sharp" src={each.text[0].senderAvatar} /> &nbsp; {each.text[0].username} </h5>
                                 <img class='msgimgbox' src={dataUrl}/>
                                 <sup>{each.text[0].sendingtime}</sup>
                             </div>
